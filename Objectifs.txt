@@ -2,4 +2,6 @@ Histoire:
 
 Nombre de dimensions : 2D
 
-Gameplay:
+Gameplay: 
+
+Outil de développement : C++
