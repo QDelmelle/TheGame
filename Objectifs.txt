@@ -4,4 +4,9 @@ Nombre de dimensions : 2D
 
 Gameplay: 
 
-Outil de développement : C++
+Outil de développement : C++, openframeworks
+
+Annexe :
+
+	Liens:
+		
