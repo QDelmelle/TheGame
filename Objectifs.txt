@@ -1,9 +1,20 @@
 Histoire:
-c'est toto qui va à la plage
+    RPG:
+        Ce qui se trouve dans tous les RPGs (ce qu'on vire):
+	    * balade sur une carte 2D vue du dessus avec apparition aléatoire d'enemis et phase de combat.
+	    * boutiques dispersées dans une map qui vendent la même chose
+	    * 
+	Points positifs des RPG (ce qu'on aime):
+	    * actions avec le décor
 
 Nombre de dimensions : 2D
 
-Gameplay: 
+Gameplay:
+    la carte ce serait un quadrillage ou chaque carré est une salle
+    pour avancer dans une salle faudrait remplir un objectif
+    dans certaines ça serait tuer tous les ennemis, dans d'autres casser un truc ou trouver un objet
+    on peut même faire plusieurs objectifs qui ouvrent certaines portes
+    
 
 Outil de développement : C++, openframeworks
 
