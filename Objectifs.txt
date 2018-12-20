@@ -14,7 +14,21 @@ Gameplay:
     pour avancer dans une salle faudrait remplir un objectif
     dans certaines ça serait tuer tous les ennemis, dans d'autres casser un truc ou trouver un objet
     on peut même faire plusieurs objectifs qui ouvrent certaines portes
-    
+    la salle elle-même est un quadrillage avec des ennemis sur certaines cases, des obstacles/objets sur d'autres
+    phase 1: tu places tes personnages aux endroits autorisés
+    phase 2: tu donnes des ordres à tes persos
+    faut pas que ce soit trop complexe nn plus, pas + de 2 ou 3 actions possibles par perso, ce qui serait important c'est ou tu vises et cmt tu te places
+    pas commencer à faire des persos ingénieurs ( qui savent tout faire)
+    ex : un perso boxeur, on ne va pas lui demander de monter une arme il va frapper c'est tout
+    son action principale: il va tout droit et tabasse le premier type ds son chemin
+    ex: un sniper: tu lui donne une direction et il tire une balle qui one shot
+    cooldown: long
+    tours par tours : il faut bien un moment pour réflechir à ton prochain move
+    il peut se passer plein de trucs dans une salle, pas seulement du combat
+on peut très bien faire des salles parcours ou un perso doit atteindre une case et les autres détruisent des obstacles/ poseent des trucs pour l'aider
+    VARIER LES OBJECTIFS
+    exemple: t'arrives dans une salle ou tu vois pas partout, tu avances un perso un peu trop loin et bim des ennemis apparaissent et tu dois réagir
+    phases de rush/ambuscade et un système plus posé dans les phases puzzle/exploration/combat stratégique
 
 Outil de développement : C++, openframeworks
 
