@@ -1,36 +1,70 @@
 Histoire:
     RPG:
-        Ce qui se trouve dans tous les RPGs (ce qu'on vire):
+        On vire ce qui se trouve dans TOUS les RPGs :
 	    * balade sur une carte 2D vue du dessus avec apparition aléatoire d'enemis et phase de combat.
 	    * boutiques dispersées dans une map qui vendent la même chose
 	    * 
-	Points positifs des RPG (ce qu'on aime):
+	Ce qu'on garde des RPGs:
 	    * actions avec le décor
 
 Nombre de dimensions : 2D
 
+
+Outil de développement : C++, openframeworks
+
+
+MUSTS (fonctionnel) :
+	Lancement du jeu
+	(1)Menu
+	(2)Jeu
+	(3)Fin du jeu
+	
+	(1)Menu
+		(1.1) Bouton/touche du clavier "Nouvelle partie" => lance une partie depuis le début
+		(1.2) Bouton/touche du clavier "Continuer" 	=> reprend là où on s'est arrêté
+		(1.3) Bouton/touche du clavier "Quitter le jeu" => ferme le programme
+		(1.4) Bouton/touche du clavier "Key Bindings" 	=> permettre de voir les touches du jeu
+	(2)Jeu
+		(2.1) La carte 	=> un environnement 2D où se trouve un paysage interactif (plus tard)
+				=> un quadrillage où chaque carré est une salle
+		(2.2) Joueur 	=> Groupe de personnages
+				=> chacun à des actions uniques
+				=> interdiction de faire des personnages OP ou trop polyvalents
+		(2.3) Personnages enemis => ...
+		(2.4) Lieux => Sur la carte, des emplacements où se trouverons des villes, des batiments, des grottes
+			(2.4.1) Salles => quadrillage avec des ennemis sur certaines cases, des obstacles/objets sur d'autres
+		(2.5) Combat 	=> Dans les salles
+				=> phase 1: placement des personnages aux endroits autorisés
+    				=> phase 2: Ordres aux persos
+				=> importance de la stratégie (placement, où les attaques sont ciblées)
+				=> max 3 actions par personnage
+				=> Complexité --
+				// exemple boxeur : aller tout droit et tabasser le premier type ds son chemin
+				// exemple un sniper : donner une direction et il tire une balle qui one shot ... cooldown: long
+			(2.5.1) Tours par tours => un moment pour réflechir au prochain move
+		(2.6) Menu pause
+			(2.6.1) Bouton/touche du clavier "Sauvegarder"
+			(2.6.2) Bouton/touche du clavier "Reprendre"
+			(2.6.3) Bouton/touche du clavier "Quitter" => retour au (1)Menu
+		(2.7) Déplacement => pour avancer dans une salle faudrait remplir un objectif
+			(2.7.1) Objectifs pour déplacement 	=> tuer tous les ennemis
+								=> dans d'autres casser un truc
+								=> trouver un objet
+								=> plusieurs objectifs qui ouvrent certaines portes
+			
+	(3)Fin du jeu
+		(3.1) Ecran spécial => ...
+		(3.2) Retour au (1)Menu
+
 Gameplay: [TODO : à séparer en plusieurs phases]
-    la carte ce serait un quadrillage ou chaque carré est une salle
-    pour avancer dans une salle faudrait remplir un objectif
-    dans certaines ça serait tuer tous les ennemis, dans d'autres casser un truc ou trouver un objet
-    on peut même faire plusieurs objectifs qui ouvrent certaines portes
-    la salle elle-même est un quadrillage avec des ennemis sur certaines cases, des obstacles/objets sur d'autres
-    phase 1: tu places tes personnages aux endroits autorisés
-    phase 2: tu donnes des ordres à tes persos
-    faut pas que ce soit trop complexe nn plus, pas + de 2 ou 3 actions possibles par perso, ce qui serait important c'est ou tu vises et cmt tu te places
-    pas commencer à faire des persos ingénieurs ( qui savent tout faire)
-    ex : un perso boxeur, on ne va pas lui demander de monter une arme il va frapper c'est tout
-    son action principale: il va tout droit et tabasse le premier type ds son chemin
-    ex: un sniper: tu lui donne une direction et il tire une balle qui one shot
-    cooldown: long
-    tours par tours : il faut bien un moment pour réflechir à ton prochain move
+    
+    
     il peut se passer plein de trucs dans une salle, pas seulement du combat
 on peut très bien faire des salles parcours ou un perso doit atteindre une case et les autres détruisent des obstacles/ poseent des trucs pour l'aider
     VARIER LES OBJECTIFS
     exemple: t'arrives dans une salle ou tu vois pas partout, tu avances un perso un peu trop loin et bim des ennemis apparaissent et tu dois réagir
     phases de rush/ambuscade et un système plus posé dans les phases puzzle/exploration/combat stratégique
 
-Outil de développement : C++, openframeworks
 
 Annexe :
 
