@@ -9,7 +9,7 @@ Histoire:
 
 Nombre de dimensions : 2D
 
-Gameplay:
+Gameplay: [TODO : à séparer en plusieurs phases]
     la carte ce serait un quadrillage ou chaque carré est une salle
     pour avancer dans une salle faudrait remplir un objectif
     dans certaines ça serait tuer tous les ennemis, dans d'autres casser un truc ou trouver un objet
