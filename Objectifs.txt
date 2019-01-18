@@ -3,9 +3,12 @@ Histoire:
         On vire ce qui se trouve dans TOUS les RPGs :
 	    * balade sur une carte 2D vue du dessus avec apparition aléatoire d'enemis et phase de combat.
 	    * boutiques dispersées dans une map qui vendent la même chose
-	    * 
+	    * tour par tour simple style final fantaisy
+	    * persos bcp trop forts avec 1000 sorts !=
+	    * système de cooldown/tour
 	Ce qu'on garde des RPGs:
 	    * actions avec le décor
+	    * gestin quêtes/persos
 
 Nombre de dimensions : 2D
 
@@ -31,16 +34,17 @@ MUSTS (fonctionnel) :
 				=> chacun à des actions uniques
 				=> interdiction de faire des personnages OP ou trop polyvalents
 		(2.3) Personnages enemis => ...
-		(2.4) Lieux => Sur la carte, des emplacements où se trouverons des villes, des batiments, des grottes
-			(2.4.1) Salles => quadrillage avec des ennemis sur certaines cases, des obstacles/objets sur d'autres
+		(2.4) Lieux => Sur la carte, des emplacements où se trouveront des villes, des batiments, des grottes
+			(2.4.1) Salles => 2D continu avec des ennemis sur certaines 
+			coord(x,y), des obstacles/objets sur d'autres
 		(2.5) Combat 	=> Dans les salles
 				=> phase 1: placement des personnages aux endroits autorisés
     				=> phase 2: Ordres aux persos
 				=> importance de la stratégie (placement, où les attaques sont ciblées)
-				=> max 3 actions par personnage
+				=> système de stamina limitée/perso*tour, coût != pour chaque action/mouvement. Peut cumuler les actions en 1 tour si la stamina le permet.
 				=> Complexité --
 				// exemple boxeur : aller tout droit et tabasser le premier type ds son chemin
-				// exemple un sniper : donner une direction et il tire une balle qui one shot ... cooldown: long
+				// exemple un sniper : donner une direction et il tire une balle qui one shot ...
 			(2.5.1) Tours par tours => un moment pour réflechir au prochain move
 		(2.6) Menu pause
 			(2.6.1) Bouton/touche du clavier "Sauvegarder"
@@ -65,6 +69,9 @@ on peut très bien faire des salles parcours ou un perso doit atteindre une case 
     exemple: t'arrives dans une salle ou tu vois pas partout, tu avances un perso un peu trop loin et bim des ennemis apparaissent et tu dois réagir
     phases de rush/ambuscade et un système plus posé dans les phases puzzle/exploration/combat stratégique
 
+
+Pistes & idées d'extension/mise à jour:
+	- Multiplayer
 
 Annexe :
 
