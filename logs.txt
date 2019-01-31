@@ -1,0 +1,18 @@
+* SEANCE 1:
+- OF fonctionnel sur portable
+- 1re version test de trucs qui bougent en 2D:
+fait: 	- afficher qq formes, les déformer/ déplacer
+		- apparition d'1 (seul) projectile (pas disparition lol)
+		- gestion update/draw par héritage
+
+à faire:
+		- collisions bords									♠
+		- plusieurs lanceurs/projectiles en mm tps			♠♠
+		- collisions agents									♠♠♠
+		- tirs non commandés								♠
+		- commandes, ordres séquentiels/ exec simultanée	♠♠♠♠
+		- clics/fenetres pop up								♠♠
+
+idées:
+		- 3D flat
+		- jeu de lumières
