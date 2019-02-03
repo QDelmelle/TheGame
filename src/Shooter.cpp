@@ -31,7 +31,7 @@ void Shooter::update() {
 void Shooter::draw()
 {
 	Shape::draw();
-	ofDrawBitmapStringHighlight("", 0, 15);
+	ofDrawBitmapStringHighlight(std::to_string(projectileList.size()), 0, 15);
 	std::list<Shape>::iterator it;
 	for (it = projectileList.begin(); it != projectileList.end(); it++) //draw all projectiles
 	{
