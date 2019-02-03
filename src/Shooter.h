@@ -2,6 +2,7 @@
 
 #include <list>
 #include "Shape.h"
+#include "ofMain.h"
 
 // an object that can throw other objects!
 class Shooter:public Shape
