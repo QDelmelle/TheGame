@@ -2,6 +2,7 @@
 
 #include "ofMain.h"
 #include "Shape.h"
+#include "Shooter.h"
 
 class ofApp : public ofBaseApp{
 
@@ -22,5 +23,6 @@ class ofApp : public ofBaseApp{
 		void dragEvent(ofDragInfo dragInfo);
 		void gotMessage(ofMessage msg);
 		
-		Shape *s1;
+		//Shape *s1;
+		Shooter * shooter1;
 };

@@ -1,4 +1,4 @@
-
+#pragma once
 
 // shape: any drawable moving or static object must implement this.
 class Shape
