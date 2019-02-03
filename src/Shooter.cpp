@@ -19,13 +19,24 @@ void Shooter::shoot(int targetX, int targetY)
 }
 
 void Shooter::update() {
-	//update each projectile
-	//?
+	Shape::update();
+
+	std::list<Shape>::iterator it;		//iterator
+	for (it = projectileList.begin(); it != projectileList.end(); it++) //update all projectiles
+	{
+		it->update();
+	}
 }
 
 void Shooter::draw()
 {
 	Shape::draw();
+	ofDrawBitmapStringHighlight("", 0, 15);
+	std::list<Shape>::iterator it;
+	for (it = projectileList.begin(); it != projectileList.end(); it++) //draw all projectiles
+	{
+		it->draw();
+	}
 	// draw each projectile
 	//?
 }
