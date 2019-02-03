@@ -31,5 +31,5 @@ void Shape::draw() {
 
 // pulsating
 void Shape::update() {
-	currentSize = size*(2+sin(2* ofGetElapsedTimef()))/2;
+	currentSize = size*(1+sin(3* ofGetElapsedTimef())/2);
 }
