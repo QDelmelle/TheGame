@@ -1,4 +1,4 @@
-* SEANCE 1:
+﻿* SEANCE 1:
 - OF fonctionnel sur portable
 - 1re version test de trucs qui bougent en 2D:
 fait: 	- afficher qq formes, les déformer/ déplacer
@@ -16,3 +16,21 @@ fait: 	- afficher qq formes, les déformer/ déplacer
 idées:
 		- 3D flat
 		- jeu de lumières
+
+* SEANCE 2:
+- Debug de VS
+- Mise en place de l'organisation du travail
+fait :
+	- git mis à jour : uniquement dossier src et bin
+	- ajout de fonctionnalités:
+		- apparition de plusieurs projectiles
+		- changement dynamique de la taille des objets (pulsation)
+		- ajout d'une case de texte pour afficher le compteur de projectiles
+
+à faire:
+		- collisions bords						♠
+		- collisions agents						♠♠♠
+		- tirs non commandés						♠
+		- commandes, ordres séquentiels/ exec simultanée		♠♠♠♠
+		- clics/fenetres pop up						♠♠
+		- gui pour modification de paramètres				♠
