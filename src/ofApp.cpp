@@ -2,25 +2,35 @@
 
 //--------------------------------------------------------------
 void ofApp::setup(){
-	//s1 = new Shape(500, 500, 100);
-	shooter1 = new Shooter(1000, 500, 150);
+	s1 = new Missile(500, 500, 100);
+	//shooter1 = new Shooter(1000, 500, 150);
+	Jonny = new Character(1000, 500, 150, 100);
 }
 
 //--------------------------------------------------------------
 void ofApp::update(){
-	//s1->update();
-	shooter1->update();
+	s1->update();
+	//shooter1->update();
+	ofSoundUpdate();
+	Jonny->update();
 }
 
 //--------------------------------------------------------------
 void ofApp::draw(){
-	//s1->draw();
-	shooter1->draw();
+	s1->draw();
+	//shooter1->draw();
+	Jonny->draw();
+
+
+	// infos generales
+	ofDrawBitmapStringHighlight(std::to_string(ofGetElapsedTimef()), 0, 30);
+	ofDrawBitmapStringHighlight(std::to_string(ofGetFrameRate()), ofGetWidth()-100, 15);
 }
 
 //--------------------------------------------------------------
 void ofApp::keyPressed(int key){
-	shooter1->shoot(0,0);
+	//shooter1->shoot();
+	Jonny->canarder(5, 10);
 }
 
 //--------------------------------------------------------------

@@ -1,6 +1,6 @@
 #pragma once
 
-#include <list>
+#include <vector>
 #include "Shape.h"
 #include "ofMain.h"
 
@@ -11,9 +11,15 @@ public:
 	Shooter(int, int, int);
 	~Shooter();
 	Shape *projectiles;	// list of the projectiles this shooter has launched.
-	void shoot(int, int);	// shoot an object towards target coordinates and add it to projectiles.
-	void update();
-	void draw();
+	ofSoundPlayer  bang; //shooting sound
+	ofSoundPlayer pup;	//disappearing sound
+
+	virtual void shoot();	// shoot an object and add it to projectiles.
+	virtual void update();
+	void updateProjectiles();
+	virtual void draw();
+	void drawProjectiles();
+
 	bool shot;// à virer
-	std::list<Shape> projectileList;
+	std::vector<Shape*> projectileList;
 };

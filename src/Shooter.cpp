@@ -2,7 +2,12 @@
 
 Shooter::Shooter(int a, int b, int s):Shape(a,b,s)
 {
-	//?
+	bang.load("sound/Piou.mp3");
+	bang.setVolume(1);
+	bang.setMultiPlay(true);
+	pup.load("sound/pup.mp3");
+	pup.setVolume(1);
+	pup.setMultiPlay(true);
 }
 
 Shooter::~Shooter()
@@ -10,33 +15,46 @@ Shooter::~Shooter()
 
 }
 
-void Shooter::shoot(int targetX, int targetY)
+void Shooter::shoot()
 {
-	
-	projectileList.push_back(*new Shape(x+2*size, y + 100*this->projectileList.size(), size / 4));
-	//projectile = new Shape(x, y, int(size / 4), targetX, targetY, 20);
-	//?
+	Shape *projectile = new Shape(x, y, size / 4);
+	projectile->move(ofVec2f(ofGetMouseX() - x, ofGetMouseY() - y));
+	projectileList.push_back(projectile);
+	bang.play();
 }
 
 void Shooter::update() {
 	Shape::update();
+	updateProjectiles();
+}
 
-	std::list<Shape>::iterator it;		//iterator
-	for (it = projectileList.begin(); it != projectileList.end(); it++) //update all projectiles
+void Shooter::updateProjectiles() {
+
+	int i = 0;
+	while (i < projectileList.size()) //update all projectiles
 	{
-		it->update();
+		projectileList[i]->update();
+		if (projectileList[i]->isOutTheWindow()) {
+			projectileList.erase(projectileList.begin()+i);
+			pup.play();
+		}
+		else
+			i++;
 	}
 }
 
 void Shooter::draw()
 {
 	Shape::draw();
-	ofDrawBitmapStringHighlight(std::to_string(projectileList.size()), 0, 15);
-	std::list<Shape>::iterator it;
-	for (it = projectileList.begin(); it != projectileList.end(); it++) //draw all projectiles
-	{
-		it->draw();
-	}
-	// draw each projectile
-	//?
+	drawProjectiles();
 }
+
+// draw each projectile
+void Shooter::drawProjectiles() {
+	//ofDrawBitmapStringHighlight(std::to_string(projectileList.size()), 0, 15);
+	for (size_t i = 0; i < projectileList.size(); i++)
+	{
+		projectileList[i]->draw();
+	}
+}
+

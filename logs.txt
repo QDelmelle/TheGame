@@ -28,9 +28,30 @@ fait :
 		- ajout d'une case de texte pour afficher le compteur de projectiles
 
 à faire:
-		- collisions bords						♠
+		- collisions bords						♠	
 		- collisions agents						♠♠♠
 		- tirs non commandés						♠
 		- commandes, ordres séquentiels/ exec simultanée		♠♠♠♠
 		- clics/fenetres pop up						♠♠
 		- gui pour modification de paramètres				♠
+
+
+* SEANCE 3:
+on met en pratique l'héritage pour les formes/agents.
+fait: 
+	-on met n'importe quelle image à la place d'une shape.
+	-sons rigolos et faciles à utiliser/enregistrer.
+	-collisions bords check.
+	-tirs en rafale check.
+	-classes Shooter et Character avec méthodes de base.
+	+classe Missile et orientation projectile.
+
+à faire: 
+	- le reste lol
+	- créer 2 persos adverses et les faire se tuer.				♠♠♠
+	- trajectoires + compliquées/ coups melee				♠♠
+	- forme + complexe que rect pour les objets avec image			♠♠
+	- shooter qui balance des shooters?					??
+
+idées:
+	-2D plusieurs plans
