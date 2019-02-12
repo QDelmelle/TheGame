@@ -26,12 +26,11 @@ class ofApp : public ofBaseApp{
 		void gotMessage(ofMessage msg);
 		void moveCamera();
 		
-		Shape *s1;
 		Shooter * shooter1;
 		Character * Jonny;
-		Shape * m;
 		std::vector<Shape*> L;
 
 		ofCamera cam;
 		ofLight light;
+		ofLight light2;
 };
