@@ -58,7 +58,7 @@ void Shooter::drawProjectiles() {
 	}
 }
 
-void Shooter::checkCollision(Shape * target)
+void Shooter::checkCollisions(Shape * target)
 {
 	int i = 0;
 	while (i < projectileList.size())

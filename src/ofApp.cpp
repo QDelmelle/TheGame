@@ -13,7 +13,7 @@ void ofApp::update(){
 	//shooter1->update();
 	ofSoundUpdate();
 	Jonny->update();
-	Jonny->checkCollision(s1);
+	Jonny->checkCollisions(s1);
 }
 
 //--------------------------------------------------------------

@@ -19,7 +19,7 @@ public:
 	void updateProjectiles();
 	virtual void draw();
 	void drawProjectiles();
-	void checkCollision(Shape* target); //check for collisions between the shooter's
+	void checkCollisions(Shape* target); //check for collisions between the shooter's
 	//projectiles and target Shape.
 
 	bool shot;// à virer
