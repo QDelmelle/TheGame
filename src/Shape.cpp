@@ -57,6 +57,16 @@ void Shape::stop()
 	isMoving = false;
 }
 
+void Shape::explode(Shape * target)
+{
+	// make target suffer here
+}
+
+bool Shape::checkCollision(Shape * target)
+{
+	return (pow(x-target->x, 2)+ pow(y - target->y, 2) < pow(size + target->size, 2)); // fancy math in there
+}
+
 bool Shape::isOutTheWindow()
 {
 	return (x < -size || y < -size || x > ofGetWidth() + size || y > ofGetHeight() + size);

@@ -58,3 +58,17 @@ void Shooter::drawProjectiles() {
 	}
 }
 
+void Shooter::checkCollision(Shape * target)
+{
+	int i = 0;
+	while (i < projectileList.size())
+	{
+		if (projectileList[i]->checkCollision(target)) {
+			projectileList[i]->explode(target);
+			projectileList.erase(projectileList.begin() + i);
+		}
+		else
+			i++;
+	}
+}
+

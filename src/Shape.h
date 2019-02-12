@@ -19,5 +19,9 @@ public:
 	virtual void draw(); // draw function, called on each frame.
 	virtual void move(ofVec2f); //move the shape, to stop call move(ofVec2f(0,0))
 	virtual void stop(); //obvious
+	virtual void explode(Shape * target);	// make this shape explode, affecting target.
+	// this shape will be deleted after.
+	virtual bool checkCollision(Shape * target); // check if this shape's and the 
+	//target's hitboxes are colliding.
 	bool isOutTheWindow();
 };
