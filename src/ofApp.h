@@ -1,9 +1,11 @@
 #pragma once
 
 #include "ofMain.h"
-#include "Shape.h"
-#include "Shooter.h"
-#include "Character.h"
+#include "core/Shape.h"
+#include "core/Shooter.h"
+#include "core/Character.h"
+#include "instanciable/Johnny.h"
+#include "instanciable/Monster.h"
 #include "vector"
 
 class ofApp : public ofBaseApp{
@@ -26,8 +28,7 @@ class ofApp : public ofBaseApp{
 		void gotMessage(ofMessage msg);
 		
 		Shape *s1;
-		Shooter * shooter1;
-		Character * Jonny;
-		Shape * m;
-		std::vector<Shape*> L;
+		Johnny * Johnny;
+		Character * C;
+		Monster * Bouboule;
 };

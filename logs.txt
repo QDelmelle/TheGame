@@ -55,3 +55,16 @@ fait:
 
 idées:
 	-2D plusieurs plans
+
+* SEANCE 4:
+Problème avec l'héritage quand il faut gérer les effets de collisions.
+--->> Diagramme de classe repensé, début de réorganisation des classes:
+Voir ClassDiag (pas encore créé)
+fait: 
+	- réécriture des classes
+	- début de débuguage
+à faire: 
+	- Finir de debug							
+	- créer un fichier diag de classe complet!
+
+ça devient sérieux les ptits potes!

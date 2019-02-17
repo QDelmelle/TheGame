@@ -2,26 +2,28 @@
 
 //--------------------------------------------------------------
 void ofApp::setup(){
-	s1 = new Missile(500, 500, 100);
-	//shooter1 = new Shooter(1000, 500, 150);
-	Jonny = new Character(1000, 500, 150, 100);
+	s1 = new Shape(500, 500, 100);
+	Johnny = new Johnny(200, 200, 150);
+	Bouboule = new Monster(1500, 500, 150);
 }
 
 //--------------------------------------------------------------
 void ofApp::update(){
 	s1->update();
-	//shooter1->update();
 	ofSoundUpdate();
-	Jonny->update();
-	Jonny->checkCollisions(s1);
+	Johnny->update();
+	Bouboule->update();
+	Johnny->checkCollisions(s1);
+	Johnny->checkCollisions(Bouboule);
+	Bouboule->checkCollisions(s1);
+	Bouboule->checkCollisions(Johnny);
 }
 
 //--------------------------------------------------------------
 void ofApp::draw(){
 	s1->draw();
-	//shooter1->draw();
-	Jonny->draw();
-
+	Johnny->draw();
+	Bouboule->draw();
 
 	// infos generales
 	ofDrawBitmapStringHighlight(std::to_string(ofGetElapsedTimef()), 0, 30);
@@ -31,7 +33,20 @@ void ofApp::draw(){
 //--------------------------------------------------------------
 void ofApp::keyPressed(int key){
 	//shooter1->shoot();
-	Jonny->canarder(5, 10);
+	switch (key)
+	{
+	case ' ':
+		Johnny->canarder(5, 10);
+		break;
+	case 'b':
+		Bouboule->move(ofVec2f(100, 100));
+		break;
+	case 'f':
+		s1->move(ofVec2f(100, 100));
+		break;
+	default:
+		break;
+	}
 }
 
 //--------------------------------------------------------------
