@@ -68,3 +68,16 @@ fait:
 	- créer un fichier diag de classe complet!
 
 ça devient sérieux les ptits potes!
+
+####### AJOUT VERSION 3D: #####################################################################################
+Le jeu a été presque complètement refait en 3D:
+
+fait:
+	- conversion coordonnées espace mais dans le plan z = 0
+	- Character = sphère avec une texture collée, missiles = cone+cylindre+texture
+	- animation via texture (sourire, fâché)
+	- lumière
+à faire:
+	-màj systeme de classes
+	-faire de la 3D : 2D plusieurs plans
+	
