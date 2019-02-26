@@ -12,7 +12,7 @@ public:
 	float hitTime; // last time this was hit
 
 	// override shape
-	virtual void getHitBy(Projectile * other);
+	void getHitBy(Projectile * p);
 	void move(ofVec2f v);
 
 	// override character

@@ -1,10 +1,11 @@
 
 #include "Monster.h"
 
-
-Monster::Monster(int a, int b, int s):Character(a, b, s, "Bouboule") //a = pos x, b = pos y, s = size, hp = health points
+Monster::Monster(int a, int b, int s):Character(a, b, s, "Bouboule")
+//a = pos x, b = pos y, s = size, hp = health points
 {
 	ofLoadImage(texture, "image/Phantom.png");
+	health = 200;
 }
 
 Monster::~Monster()
@@ -12,9 +13,9 @@ Monster::~Monster()
 
 }
 
-void Monster::getHitBy(Projectile * other)
+void Monster::getHitBy(Projectile * p)
 {
-	Body::getHitBy(other);
+	//health -= p->dmgOnHit/2;
 	if (health <= 0) isAlive = false;
 }
 

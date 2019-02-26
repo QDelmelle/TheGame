@@ -33,7 +33,7 @@ void Shooter::draw()
 //update all projectiles
 void Shooter::updateProjectiles() {
 
-	int i = 0;
+	unsigned int i = 0;
 	while (i < projectileList.size())
 	{
 		projectileList[i]->update();
@@ -56,7 +56,7 @@ void Shooter::drawProjectiles() {
 
 void Shooter::checkCollisions(Shape * target)
 {
-	int i = 0;
+	unsigned int i = 0;
 	while (i < projectileList.size())
 	{
 		if (projectileList[i]->checkCollision(target)) {

@@ -39,5 +39,6 @@ bool Projectile::checkCollision(Shape * target)
 
 void Projectile::affect(Body * target)
 {
+
 }
 

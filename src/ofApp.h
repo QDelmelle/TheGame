@@ -28,7 +28,7 @@ class ofApp : public ofBaseApp{
 		void gotMessage(ofMessage msg);
 		
 		Shape *s1;
-		Johnny * Johnny;
+		Johnny * John;
 		Character * C;
 		Monster * Bouboule;
 };

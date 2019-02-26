@@ -1,4 +1,5 @@
 #include "Body.h"
+#include "Projectile.h"
 
 Body::Body(int a, int b, int s):Shape(a, b, s)
 {
@@ -10,9 +11,10 @@ Body::~Body()
 }
 
 
-void Body::getHitBy(Projectile * P)
+void Body::getHitBy(Projectile * p)
 {
-	P->affect(this);
+	health -= p->dmgOnHit;
+	if (health <= 0) isAlive = false;
 }
 
 void Body::draw()

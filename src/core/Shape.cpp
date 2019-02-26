@@ -1,4 +1,5 @@
 #include "Shape.h"
+#include "Projectile.h"
 #include "ofMain.h"
 
 // default methods for class Shape
@@ -55,9 +56,14 @@ void Shape::stop()
 	isMoving = false;
 }
 
-void Shape::getHitBy(Projectile * P)
+void Shape::getHitBy(Projectile * p)
 {
 	
+}
+
+void Shape::affect()
+{
+
 }
 
 bool Shape::isOutTheWindow()

@@ -10,5 +10,7 @@ public:
 	~Missile();
 
 	// overrides projectile
-	void affect(Body * target);
+
+	// unique
+	
 };

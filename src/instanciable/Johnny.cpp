@@ -13,7 +13,7 @@ Johnny::Johnny(int a, int b, int s):Shooter(a, b, s, "Johnny") //a = pos x, b = 
 	pup.setVolume(1);
 	pup.setMultiPlay(true);
 	health = 100;
-	ofLoadImage(texture, "../image/Gunman.png");
+	ofLoadImage(texture, "image/Gunman.png");
 	roundsLeft = 0;
 	rps = 1;
 	shotTime = 0;

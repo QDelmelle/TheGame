@@ -2,8 +2,8 @@
 
 //--------------------------------------------------------------
 void ofApp::setup(){
-	s1 = new Shape(500, 500, 100);
-	Johnny = new Johnny(200, 200, 150);
+	s1 = new Missile(500, 500, 100);
+	John = new Johnny(200, 200, 150);
 	Bouboule = new Monster(1500, 500, 150);
 }
 
@@ -11,18 +11,16 @@ void ofApp::setup(){
 void ofApp::update(){
 	s1->update();
 	ofSoundUpdate();
-	Johnny->update();
+	John->update();
 	Bouboule->update();
-	Johnny->checkCollisions(s1);
-	Johnny->checkCollisions(Bouboule);
-	Bouboule->checkCollisions(s1);
-	Bouboule->checkCollisions(Johnny);
+	John->checkCollisions(s1);
+	John->checkCollisions(Bouboule);
 }
 
 //--------------------------------------------------------------
 void ofApp::draw(){
 	s1->draw();
-	Johnny->draw();
+	John->draw();
 	Bouboule->draw();
 
 	// infos generales
@@ -36,7 +34,7 @@ void ofApp::keyPressed(int key){
 	switch (key)
 	{
 	case ' ':
-		Johnny->canarder(5, 10);
+		John->canarder(5, 10);
 		break;
 	case 'b':
 		Bouboule->move(ofVec2f(100, 100));

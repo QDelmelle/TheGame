@@ -3,6 +3,7 @@
 #include <vector>
 #include "Character.h"
 #include "ofMain.h"
+#include "Projectile.h"
 
 // a Character that can throw projectiles!
 class Shooter:public Character
