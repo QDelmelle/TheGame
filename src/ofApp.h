@@ -7,6 +7,7 @@
 #include "instanciable/Johnny.h"
 #include "instanciable/Monster.h"
 #include "vector"
+#include "ofxGui.h"
 
 class ofApp : public ofBaseApp{
 
@@ -31,4 +32,16 @@ class ofApp : public ofBaseApp{
 		Johnny * John;
 		Character * C;
 		Monster * Bouboule;
+
+		//gui
+		ofxFloatSlider radius;
+		ofxColorSlider color;
+		ofxVec2Slider centerJohn;
+		ofxIntSlider circleResolution;
+		ofxToggle filled;
+		ofxButton twoCircles;
+		ofxButton ringButton;
+		ofxLabel screenSize;
+
+		ofxPanel gui;
 };

@@ -66,6 +66,18 @@ void Shape::affect()
 
 }
 
+void Shape::setPos(int newX, int newY)
+{
+	x = newX;
+	y = newY;
+}
+
+void Shape::setPos(ofVec2f v)
+{
+	x = v.x;
+	y = v.y;
+}
+
 bool Shape::isOutTheWindow()
 {
 	return (x < -size || y < -size || x > ofGetWidth() + size || y > ofGetHeight() + size);

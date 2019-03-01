@@ -23,5 +23,7 @@ public:
 	virtual void stop(); //obvious
 	virtual void getHitBy(Projectile * p);	// affect this from being hit by another object.
 	virtual void affect();
+	void setPos(int x, int y);
+	void setPos(ofVec2f);
 	bool isOutTheWindow();
 };
