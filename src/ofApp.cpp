@@ -7,14 +7,15 @@ void ofApp::setup(){
 	Bouboule = new Monster(1500, 500, 150);
 
 	//setup gui => dans le futur, 1 gui par objet
+
 	gui.setup("Paramètres de John"); // most of the time you don't need a name
 	///gui.add(filled.setup("fill", true));
 	///gui.add(radius.setup("radius", 140, 10, 300));
 	gui.add(centerJohn.setup("center", ofVec2f(ofGetWidth()*.5, ofGetHeight()*.5), ofVec2f(0, 0), ofVec2f(ofGetWidth(), ofGetHeight())));
 	gui.add(color.setup("color", ofColor(100, 100, 140), ofColor(0, 0), ofColor(255, 255)));
 	///gui.add(circleResolution.setup("circle res", 5, 3, 90));
-	///gui.add(twoCircles.setup("two circles"));
-	///gui.add(ringButton.setup("ring"));
+	gui.add(selectedJohn.set("John", false));
+	gui.add(selectedBouboule.set("Bouboule", false));
 	gui.add(screenSize.setup("screen size", ofToString(ofGetWidth()) + "x" + ofToString(ofGetHeight())));
 }
 
@@ -26,6 +27,17 @@ void ofApp::update(){
 	Bouboule->update();
 	John->checkCollisions(s1);
 	John->checkCollisions(Bouboule);
+
+	if (selectedJohn && !oldJohn) { // -TODO : mettre les 2 if dans une fonctions
+		selectedBouboule.set(false);
+		oldJohn = true;
+		oldBouboule = false;
+	}
+	if (selectedBouboule && !oldBouboule) {
+		selectedJohn.set(false);
+		oldJohn = false;
+		oldBouboule = true;
+	}
 }
 
 //--------------------------------------------------------------
@@ -40,7 +52,7 @@ void ofApp::draw(){
 
 	//gui
 	ofSetBackgroundColor(color);
-	John->setPos( (ofVec2f)centerJohn);
+	//John->setPos( (ofVec2f)centerJohn);
 	gui.draw();
 }
 
@@ -80,7 +92,19 @@ void ofApp::mouseDragged(int x, int y, int button){
 
 //--------------------------------------------------------------
 void ofApp::mousePressed(int x, int y, int button){
+	if (selectedJohn && button == OF_MOUSE_BUTTON_1)
+		John->setPos(x, y);
+	if (selectedBouboule && button == OF_MOUSE_BUTTON_1)
+		Bouboule->setPos(x, y);
+	/*
+	OF_MOUSE_BUTTON_1 = left clic
+	OF_MOUSE_BUTTON_2 = clic wheel
 
+
+
+
+
+	*/
 }
 
 //--------------------------------------------------------------

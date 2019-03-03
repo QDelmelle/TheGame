@@ -4,14 +4,15 @@
 
 Johnny::Johnny(int a, int b, int s):Shooter(a, b, s, "Johnny") //a = pos x, b = pos y, s = size, hp = health points
 {
-	//load texture
-	//def HP
+
 	bang.load("sound/Piou.mp3");
 	bang.setVolume(1);
 	bang.setMultiPlay(true);
+
 	pup.load("sound/pup.mp3");
 	pup.setVolume(1);
 	pup.setMultiPlay(true);
+
 	health = 100;
 	ofLoadImage(texture, "image/Gunman.png");
 	roundsLeft = 0;
