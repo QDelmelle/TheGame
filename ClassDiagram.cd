@@ -1,0 +1,67 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ClassDiagram MajorVersion="1" MinorVersion="1" MembersFormat="FullSignature">
+  <Class Name="Body">
+    <Position X="2.5" Y="6" Width="2.25" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAgACAAAAIBAAAAAAAAAgAAAAEAAAAAAAg=</HashCode>
+      <FileName>src\core\Body.h</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Character">
+    <Position X="2.5" Y="9.25" Width="2.25" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAEAAAAAAAAAAAAKAA=</HashCode>
+      <FileName>src\core\Character.h</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Shape">
+    <Position X="4.25" Y="0.5" Width="2" />
+    <TypeIdentifier>
+      <HashCode>gAAEAACgAAAAAACAAIIAAAABAIAgAAAAAAJhAAEEAAA=</HashCode>
+      <FileName>src\core\Shape.h</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Shooter">
+    <Position X="0.75" Y="12" Width="2.75" />
+    <TypeIdentifier>
+      <HashCode>AAgQCAAEQEAAAAAAAAMAAAABEIAAAAAAAAAAAAAEAAA=</HashCode>
+      <FileName>src\core\Shooter.h</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Projectile">
+    <Position X="7.25" Y="6" Width="2.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAACAAgIAAAAEAIAAAgAAAAAAgABAKAA=</HashCode>
+      <FileName>src\core\Projectile.h</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Johnny">
+    <Position X="1" Y="16.25" Width="2.5" />
+    <TypeIdentifier>
+      <HashCode>IAAgAAAEAAAAAQAAAAIAAAAAAAAAAEIAAAAAAAEEAAA=</HashCode>
+      <FileName>src\instanciable\Johnny.h</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Missile">
+    <Position X="7.75" Y="10" Width="1.75" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAgAAAAAAAAAAAAEAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>src\instanciable\Missile.h</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="ofApp">
+    <Position X="10.75" Y="0.5" Width="3" />
+    <TypeIdentifier>
+      <HashCode>EDoBABBACAAAAAgABAIAABAAAiAAAUCAYEAAgCAMgEA=</HashCode>
+      <FileName>src\ofApp.h</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Monster">
+    <Position X="4.25" Y="12" Width="2.25" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAACACAIAAAAAAAAAAAAAAgEgAAAEAAA=</HashCode>
+      <FileName>src\instanciable\Monster.h</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Font Name="Segoe UI" Size="9" />
+</ClassDiagram>

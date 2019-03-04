@@ -13,6 +13,7 @@ public:
 
 	int health;
 	ofTexture texture;
+
 	vector<int> effectsDodged;
 
 	//override Shape
