@@ -3,6 +3,7 @@
 
 #include "Body.h"
 
+class Body;
 
 class Projectile :public Shape 
 {
@@ -14,13 +15,13 @@ public:
 	ofVec2f sommets[4];
 	int angle;			// orientation par rapport à (1,0)
 	int dmgOnHit;
+	vector<int> effects;
 
 	virtual void affect(Body * target);		// affect target by exploding in its face
-	virtual bool checkCollision(Shape * target); // check if this projectile's and the 
+	virtual bool checkCollision(Body * target); // check if this projectile's and the 
 	//target's hitboxes are colliding.
 
 	// overrides Shape
 	virtual void draw();
 	virtual void move(ofVec2f);
-
 };

@@ -1,9 +1,13 @@
 #pragma once
 
 #include <vector>
+#include <string>
+#include <iostream>
 #include "Character.h"
 #include "ofMain.h"
 #include "Projectile.h"
+
+using namespace std;
 
 // a Character that can throw projectiles!
 class Shooter:public Character
@@ -18,9 +22,9 @@ public:
 	void updateProjectiles();
 	virtual void shoot();	// shoot an object and add it to projectiles.
 	void drawProjectiles();
-	void checkCollisions(Shape* target); //check for collisions between the shooter's
+	void checkCollisions(Body* target); //check for collisions between the shooter's
 	//projectiles and target Shape.
-	virtual bool makeHit(int , Shape * target); //function used to make collision effects
+	virtual bool makeHit(int , Body * target); //function used to make collision effects
 	// happen bewteen a projectile and the target. Returns true if the projectile is destroyed.
 
 	//override Shape

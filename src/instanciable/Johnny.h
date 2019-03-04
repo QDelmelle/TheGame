@@ -15,7 +15,8 @@ public:
 	int roundsLeft;	// nbre de proj. restants à tirer
 	float rps;			// nbre de proj à tirer/sec
 	float shotTime;			// time at which the last round was shot
-	// override Shooter
+
+	//@override Shooter
 	void update();
 	void shoot();
 	void draw();

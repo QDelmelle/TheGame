@@ -54,21 +54,26 @@ void Shooter::drawProjectiles() {
 	}
 }
 
-void Shooter::checkCollisions(Shape * target)
+void Shooter::checkCollisions(Body * target)
 {
-	unsigned int i = 0;
+	int i = 0;
 	while (i < projectileList.size())
 	{
 		if (projectileList[i]->checkCollision(target)) {
-			if (!makeHit(i, target)) i++;
+			if (!makeHit(i, target)) i++; //expliquer cette fonction
+			
 		}
-		else
+		else {
+			
 			i++;
+		}
 	}
 }
 
-bool Shooter::makeHit(int projIndex, Shape * target)
+bool Shooter::makeHit(int projIndex, Body * target)
 {
+	cout << "Shooter::makeHit" << endl;
+
 	target->getHitBy(projectileList[projIndex]);
 	projectileList.erase(projectileList.begin() + projIndex);
 	return true;

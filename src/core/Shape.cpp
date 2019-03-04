@@ -56,10 +56,11 @@ void Shape::stop()
 	isMoving = false;
 }
 
+/*
 void Shape::getHitBy(Projectile * p)
 {
 	
-}
+}*/
 
 void Shape::affect()
 {

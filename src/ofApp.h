@@ -8,6 +8,7 @@
 #include "instanciable/Monster.h"
 #include "vector"
 #include "ofxGui.h"
+#include "ofParameter.h"
 
 class ofApp : public ofBaseApp{
 
@@ -28,7 +29,7 @@ class ofApp : public ofBaseApp{
 		void dragEvent(ofDragInfo dragInfo);
 		void gotMessage(ofMessage msg);
 		
-		Shape *s1;
+		Missile *s1;
 		Johnny * John;
 		Character * C;
 		Monster * Bouboule;
@@ -39,8 +40,9 @@ class ofApp : public ofBaseApp{
 		ofxVec2Slider centerJohn;
 		ofxIntSlider circleResolution;
 		ofxToggle filled;
-		ofxButton twoCircles;
-		ofxButton ringButton;
+		ofParameter<bool> selectedJohn;
+		ofParameter<bool> selectedBouboule;
+		bool oldJohn = false, oldBouboule = false;
 		ofxLabel screenSize;
 
 		ofxPanel gui;

@@ -29,7 +29,7 @@ void Projectile::move(ofVec2f v)
 	angle = origin.angle(v);
 }
 
-bool Projectile::checkCollision(Shape * target)
+bool Projectile::checkCollision(Body * target)
 {
 	if(target->isAlive){
 		// fancy math right there
