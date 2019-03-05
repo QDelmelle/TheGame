@@ -11,6 +11,7 @@ public:
 	~Monster();
 
 	float hitTime; // last time this was hit
+	float burnStart;
 
 	// override shape
 	void getHitBy(Projectile * p);

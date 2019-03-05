@@ -1,8 +1,6 @@
 
 #include "Monster.h"
 
-using namespace effect;
-
 Monster::Monster(int a, int b, int s):Character(a, b, s, "Bouboule")
 //a = pos x, b = pos y, s = size, hp = health points
 {
@@ -26,23 +24,29 @@ void Monster::getHitBy(Projectile * p)
 
 	/*Boucle peut etre dans un fonction : dans la classe EffectClass?*/
 	for (int i = 0; i < p->effects.size(); i++) {
+		cout << "p->effects[i] = " << p->effects[i] << endl;
 		//check if effect is dodged
 		for (int j = 0; j < effectsDodged.size(); j++) {	//remarque : boucle de check est peut etre inutile
-			if (p->effects[i] == effectsDodged[j])			//
-				dodged = true;								//
-		}													//
-		// if effect not dodged then apply effect			//
-		if (!dodged) {										//
+			if (p->effects[i] == effectsDodged[j]) {			
+				dodged = true;								
+				cout << "Monster::getHitBy -> I resist !" << endl;
+			}
+		}													
+		// if effect not dodged then apply effect			
+		if (!dodged) {										
 			//apply effect
-			switch (p->effects[i]) {
+			cout << "p->effects[i] = " << p->effects[i] << endl;
+			switch (p->effects[i]) { //rem : on peut virer la boucle dodged et mettre que des case qui affectent le monstre
 			case PHYSICAL :
 				health -= p->dmgOnHit;
+				cout << "Monster::getHitBy -> Damage on hit !" << endl;
 				break;
 			case BURN:
-				EffectClass::burnStartTime = ofGetEllapsedTimef();
+				burnStart = ofGetElapsedTimef();
+				cout << "Monster::getHitBy -> Burn !" << endl;
 				break;
 			default:
-				cout << "I resist !" << endl;
+				cout << "Monster::getHitBy -> Not dodged and not implemented" << endl;
 			}
 		}
 		
@@ -68,7 +72,7 @@ void Monster::update()
 {
 	if(isAlive){
 		Character::update();
-		EffectClass::burn(this, hitTime, 3, 10);
+		EffectClass::burn(this, burnStart, 3, 10);
 	}
 }
 

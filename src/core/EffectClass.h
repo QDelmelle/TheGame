@@ -17,10 +17,8 @@ enum effect {
 	INVINCIBLE = 12,
 	INVISIBLE = 13,
 };
-namespace effect{
-	class EffectClass {
-	public:
-		static void	burn(Body * target, float start, float duration, int amount);
-		static float burnStartTime;
-	};
-}
+
+class EffectClass {
+public:
+	static void	burn(Body * target, float start, float duration, int amount);
+};
