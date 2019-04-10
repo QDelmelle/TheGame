@@ -15,7 +15,7 @@ public:
 	ofVec2f sommets[4];
 	int angle;			// orientation par rapport à (1,0)
 	int dmgOnHit;
-	vector<int> effects;
+	int effects[20];
 
 	virtual void affect(Body * target);		// affect target by exploding in its face
 	virtual bool checkCollision(Body * target); // check if this projectile's and the 

@@ -20,4 +20,7 @@ public:
 	void update();
 	void shoot();
 	void draw();
+
+	//override body
+	virtual void getHitBy(Projectile * p);
 };

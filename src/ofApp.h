@@ -32,7 +32,7 @@ class ofApp : public ofBaseApp{
 		Missile *s1;
 		Johnny * John;
 		Character * C;
-		Monster * Bouboule;
+		vector<Monster*> monsters;
 
 		//gui
 		ofxFloatSlider radius;

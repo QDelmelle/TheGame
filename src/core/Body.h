@@ -14,11 +14,15 @@ public:
 	int health;
 	ofTexture texture;
 
-	vector<int> effectsDodged;
-
+	// Body only
+	int burnTicks; // number of ticks the body has to take while burning
+	int burnDmg;	// burning Damage the bidy takes at each tick.
+	float burnTime; // number of s. since the last tick of burning (1 tick= 1/2 s)
+	
 	//override Shape
 	virtual void draw();
-	virtual void getHitBy(Projectile * p);
+	virtual void getHitBy(Projectile * p)=0;
+	virtual void update();
 
 	// check espace entre bodies
 

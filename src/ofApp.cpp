@@ -4,10 +4,10 @@
 void ofApp::setup(){
 	s1 = new Missile(500, 500, 100);
 	John = new Johnny(200, 200, 150);
-	Bouboule = new Monster(1500, 500, 150);
+	monsters.push_back(new Monster(1500, 500, 150));
 
 	//setup gui => dans le futur, 1 gui par objet
-
+	
 	gui.setup("Paramètres de John"); // most of the time you don't need a name
 	///gui.add(filled.setup("fill", true));
 	///gui.add(radius.setup("radius", 140, 10, 300));
@@ -15,7 +15,7 @@ void ofApp::setup(){
 	gui.add(color.setup("color", ofColor(100, 100, 140), ofColor(0, 0), ofColor(255, 255)));
 	///gui.add(circleResolution.setup("circle res", 5, 3, 90));
 	gui.add(selectedJohn.set("John", false));
-	gui.add(selectedBouboule.set("Bouboule", false));
+	gui.add(selectedBouboule.set("monsters", false));
 	gui.add(screenSize.setup("screen size", ofToString(ofGetWidth()) + "x" + ofToString(ofGetHeight())));
 }
 
@@ -24,9 +24,14 @@ void ofApp::update(){
 	s1->update();
 	ofSoundUpdate();
 	John->update();
-	Bouboule->update();
-	///ohn->checkCollisions(s1);
-	John->checkCollisions(Bouboule);
+	//Boucle pour update les monstres
+	for (int i = 0; i < monsters.size(); i++) {
+		monsters[i]->update();
+	}
+
+	//Boucle pour checker collision qvec chaque monster
+	for(Monster* m : monsters)
+		John->checkCollisions(m);
 
 	if (selectedJohn && !oldJohn) { // -TODO : mettre les 2 if dans une fonctions
 		selectedBouboule.set(false);
@@ -44,7 +49,9 @@ void ofApp::update(){
 void ofApp::draw(){
 	s1->draw();
 	John->draw();
-	Bouboule->draw();
+	for (int i = 0; i < monsters.size(); i++) {
+		monsters[i]->draw();
+	}
 
 	// infos generales
 	ofDrawBitmapStringHighlight(std::to_string(ofGetElapsedTimef()), 0, 30);
@@ -65,10 +72,13 @@ void ofApp::keyPressed(int key){
 		John->canarder(2, 2);
 		break;
 	case 'b':
-		Bouboule->move(ofVec2f(100, 100));
+		monsters[0]->move(ofVec2f(100, 100));
 		break;
 	case 'f':
 		s1->move(ofVec2f(100, 100));
+		break;
+	case 'p':
+		monsters.push_back(new Monster(mouseX, mouseY, 150));
 		break;
 	default:
 		break;
@@ -95,14 +105,10 @@ void ofApp::mousePressed(int x, int y, int button){
 	if (selectedJohn && button == OF_MOUSE_BUTTON_1)
 		John->setPos(x, y);
 	if (selectedBouboule && button == OF_MOUSE_BUTTON_1)
-		Bouboule->setPos(x, y);
+		monsters[0]->setPos(x, y);
 	/*
 	OF_MOUSE_BUTTON_1 = left clic
 	OF_MOUSE_BUTTON_2 = clic wheel
-
-
-
-
 
 	*/
 }

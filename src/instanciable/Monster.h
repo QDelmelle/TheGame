@@ -7,6 +7,7 @@
 class Monster:public Character
 {
 public:
+	//Monster(posX, posY, size)
 	Monster(int, int, int);
 	~Monster();
 

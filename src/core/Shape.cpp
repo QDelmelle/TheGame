@@ -35,7 +35,7 @@ void Shape::draw() {
 
 
 void Shape::update() {
-	currentSize = size*(1+0.24*sin(3* ofGetElapsedTimef())/2); // pulsating
+	//currentSize = size*(1+0.24*sin(3* ofGetElapsedTimef())/2); // pulsating
 	if (isMoving) {
 		float t = ofGetElapsedTimef() - refTime;
 		x = x + t * speedVector.x;
@@ -54,17 +54,6 @@ void Shape::move(ofVec2f v) // v = direction and velocity (not a target)
 void Shape::stop()
 {
 	isMoving = false;
-}
-
-/*
-void Shape::getHitBy(Projectile * p)
-{
-	
-}*/
-
-void Shape::affect()
-{
-
 }
 
 void Shape::setPos(int newX, int newY)

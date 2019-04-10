@@ -56,3 +56,11 @@ void Johnny::draw()
 	ofDrawBitmapStringHighlight(std::to_string(health), x+30, y+30);
 }
 
+void Johnny::getHitBy(Projectile * p)
+{
+	health -= p->effects[PHYSICAL];
+	burnDmg = max(burnDmg, p->effects[BURN]);
+	burnTicks = 10;
+	burnTime = ofGetElapsedTimef();
+}
+

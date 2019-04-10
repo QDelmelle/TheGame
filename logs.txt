@@ -69,6 +69,15 @@ fait:
 
 ça devient sérieux les ptits potes!
 
+* SEANCE 5:
+
+fait: 
+	- diag classes
+	- textures ++
+	- effets collisions +- fonctionnels
+
+
+
 ####### AJOUT VERSION 3D: #####################################################################################
 Le jeu a été presque complètement refait en 3D:
 

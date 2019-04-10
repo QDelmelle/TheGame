@@ -22,7 +22,7 @@ public:
 	virtual void move(ofVec2f); //move the shape, to stop call move(ofVec2f(0,0))
 	virtual void stop(); //obvious
 	///virtual void getHitBy(Projectile * p);	// affect this from being hit by another object.
-	virtual void affect();//peut etre supprimer ?
+	///virtual void affect();//peut etre supprimer ?
 
 	void setPos(int x, int y);
 	void setPos(ofVec2f);
