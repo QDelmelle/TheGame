@@ -14,7 +14,7 @@ public:
 	void canarder(int mun, float rps); // tire mun projectiles à rps proj/sec
 	int roundsLeft;	// nbre de proj. restants à tirer
 	float rps;			// nbre de proj à tirer/sec
-	float shotTime;			// time at which the last round was shot
+	
 
 	//@override Shooter
 	void update();

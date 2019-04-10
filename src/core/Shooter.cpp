@@ -17,6 +17,7 @@ void Shooter::shoot()
 	projectile->move(ofVec2f(ofGetMouseX() - x, ofGetMouseY() - y));
 	projectileList.push_back(projectile);
 	bang.play();
+	//TODO : draw shooting texture
 }
 
 void Shooter::update() {
@@ -26,8 +27,15 @@ void Shooter::update() {
 
 void Shooter::draw()
 {
-	Character::draw();
+	///Character::draw();
+
 	drawProjectiles();
+
+	if (projectileList.size() > 0 && ofGetElapsedTimef() - shotTime < .3) {
+		shootingTexture.draw(ofPoint(x - currentSize, y - currentSize), ofPoint(x + currentSize, y - currentSize), ofPoint(x + currentSize, y + currentSize), ofPoint(x - currentSize, y + currentSize));
+	}
+	else
+		Character::draw();
 }
 
 //update all projectiles

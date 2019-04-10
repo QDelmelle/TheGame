@@ -15,6 +15,7 @@ Johnny::Johnny(int a, int b, int s):Shooter(a, b, s, "Johnny") //a = pos x, b = 
 
 	health = 100;
 	ofLoadImage(texture, "image/Gunman.png");
+	ofLoadImage(shootingTexture, "image/GunmanShooting.png");
 	roundsLeft = 0;
 	rps = 1;
 	shotTime = 0;
@@ -42,7 +43,7 @@ void Johnny::canarder(int mun, float rps)
 	this->rps = rps;
 }
 
-void Johnny::shoot()
+void Johnny::shoot() //redondant => existe déjà dans shooter
 {
 	Projectile * projectile = new Missile(x, y, size / 4);
 	projectile->move(ofVec2f(ofGetMouseX() - x, ofGetMouseY() - y));

@@ -5,6 +5,11 @@ Monster::Monster(int a, int b, int s):Character(a, b, s, "Bouboule")
 //a = pos x, b = pos y, s = size, hp = health points
 {
 	ofLoadImage(texture, "image/Phantom.png");
+	ofTexture temp;
+	ofLoadImage(temp, "image/PhantomBurning3.png");
+	burningAnimation.push_back(temp);
+	ofLoadImage(temp, "image/PhantomBurning4.png");
+	burningAnimation.push_back(temp);
 	health = 200;
 	///effectsDodged.push_back(3);
 }

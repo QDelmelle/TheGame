@@ -18,6 +18,10 @@ public:
 	ofSoundPlayer bang; //shooting sound
 	ofSoundPlayer pup;	//disappearing sound
 	std::vector<Projectile*> projectileList; // list of the projectiles this shooter has launched.
+	ofTexture shootingTexture; // the texture used when the Shooter is shooting
+	
+	float shotTime;			// time at which the last round was shot
+							//rem : viens de la classe Johnny
 	
 	void updateProjectiles();
 	virtual void shoot();	// shoot an object and add it to projectiles.

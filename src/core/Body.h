@@ -13,6 +13,7 @@ public:
 
 	int health;
 	ofTexture texture;
+	std::vector<ofTexture> burningAnimation;
 
 	// Body only
 	int burnTicks; // number of ticks the body has to take while burning
