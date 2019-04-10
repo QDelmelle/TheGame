@@ -6,12 +6,12 @@ fait: 	- afficher qq formes, les déformer/ déplacer
 		- gestion update/draw par héritage
 
 à faire:
-		- collisions bords									♠
-		- plusieurs lanceurs/projectiles en mm tps			♠♠
-		- collisions agents									♠♠♠
-		- tirs non commandés								♠
-		- commandes, ordres séquentiels/ exec simultanée	♠♠♠♠
-		- clics/fenetres pop up								♠♠
+		- collisions bords ♠
+		- plusieurs lanceurs/projectiles en mm tps ♠♠
+		- collisions agents ♠♠♠
+		- tirs non commandés ♠
+		- commandes, ordres séquentiels/ exec simultanée ♠♠♠♠
+		- clics/fenetres pop up ♠♠
 
 idées:
 		- 3D flat
@@ -28,12 +28,12 @@ fait :
 		- ajout d'une case de texte pour afficher le compteur de projectiles
 
 à faire:
-		- collisions bords						♠	
-		- collisions agents						♠♠♠
-		- tirs non commandés						♠
-		- commandes, ordres séquentiels/ exec simultanée		♠♠♠♠
-		- clics/fenetres pop up						♠♠
-		- gui pour modification de paramètres				♠
+		- collisions bords ♠	
+		- collisions agents ♠♠♠
+		- tirs non commandés ♠
+		- commandes, ordres séquentiels/ exec simultanée ♠♠♠♠
+		- clics/fenetres pop up ♠♠
+		- gui pour modification de paramètres ♠
 
 
 * SEANCE 3:
@@ -48,10 +48,10 @@ fait:
 
 à faire: 
 	- le reste lol
-	- créer 2 persos adverses et les faire se tuer.				♠♠♠
-	- trajectoires + compliquées/ coups melee				♠♠
-	- forme + complexe que rect pour les objets avec image			♠♠
-	- shooter qui balance des shooters?					??
+	- créer 2 persos adverses et les faire se tuer. ♠♠♠
+	- trajectoires + compliquées/ coups melee ♠♠
+	- forme + complexe que rect pour les objets avec image ♠♠
+	- shooter qui balance des shooters? ??
 
 idées:
 	-2D plusieurs plans
@@ -75,8 +75,23 @@ fait:
 	- diag classes
 	- textures ++
 	- effets collisions +- fonctionnels
+	-debugage
 
+* SEANCE 6:
 
+fait:
+	- effets fixés
+	- Brulage
+	- multiples monstres (en vecteur)
+
+à faire résiduels :
+	- commandes, ordres séquentiels/ exec simultanée ♠♠♠♠
+	- clics/fenetres pop up ♠♠
+	- shooter qui balance des shooters? ??
+a faire:
+	- Textures & animation brulage
+	- animation mort (peut etre dans le destructeur)
+	- animation explosion projectile
 
 ####### AJOUT VERSION 3D: #####################################################################################
 Le jeu a été presque complètement refait en 3D:
