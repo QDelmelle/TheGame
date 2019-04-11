@@ -92,6 +92,9 @@ a faire:
 	- Textures & animation brulage
 	- animation mort (peut etre dans le destructeur)
 	- animation explosion projectile
+	- animations partout wouhou
+
+
 
 ####### AJOUT VERSION 3D: #####################################################################################
 Le jeu a été presque complètement refait en 3D:

@@ -27,8 +27,6 @@ void Shooter::update() {
 
 void Shooter::draw()
 {
-	///Character::draw();
-
 	drawProjectiles();
 
 	if (projectileList.size() > 0 && ofGetElapsedTimef() - shotTime < .3) {
@@ -68,11 +66,9 @@ void Shooter::checkCollisions(Body * target)
 	while (i < projectileList.size())
 	{
 		if (projectileList[i]->checkCollision(target)) {
-			if (!makeHit(i, target)) i++; //expliquer cette fonction
-			
+			if (!makeHit(i, target)) i++;
 		}
 		else {
-			
 			i++;
 		}
 	}
@@ -80,8 +76,6 @@ void Shooter::checkCollisions(Body * target)
 
 bool Shooter::makeHit(int projIndex, Body * target)
 {
-	cout << "Shooter::makeHit" << endl;
-
 	target->getHitBy(projectileList[projIndex]);
 	projectileList.erase(projectileList.begin() + projIndex);
 	return true;

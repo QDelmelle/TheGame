@@ -69,7 +69,7 @@ void ofApp::keyPressed(int key){
 	switch (key)
 	{
 	case ' ':
-		John->canarder(2, 2);
+		John->shoot();
 		break;
 	case 'b':
 		monsters[0]->move(ofVec2f(100, 100));

@@ -16,9 +16,9 @@ Body::~Body()
 
 void Body::draw()
 {
-	if (ofGetElapsedTimef() - burnTime <= 1) {
-		cout << "((int)(ofGetElapsedTimef() - burnTime) * 2) = " << (int)((ofGetElapsedTimef() - burnTime) * 2) << 
-			"\n(ofGetElapsedTimef() - burnTime)*2 = " << (ofGetElapsedTimef() - burnTime) * 2 << endl;
+	if (burnTicks > 0) {
+		//cout << "((int)(ofGetElapsedTimef() - burnTime) * 2) = " << (int)((ofGetElapsedTimef() - burnTime) * 2) << 
+		//	"\n(ofGetElapsedTimef() - burnTime)*2 = " << (ofGetElapsedTimef() - burnTime) * 2 << endl;
 		// Etant donné la fonction Body::update
 		// et que l'on a 2 textures d'animation
 		// => on multiplie de le temps par 2*2 (=4) et on prend le modulo 2
