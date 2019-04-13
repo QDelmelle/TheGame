@@ -80,6 +80,8 @@ void ofApp::keyPressed(int key){
 	case 'p':
 		monsters.push_back(new Monster(mouseX, mouseY, 150));
 		break;
+	case 'm':
+		monsters[0]->attackPunch();
 	default:
 		break;
 	}

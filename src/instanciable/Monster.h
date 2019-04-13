@@ -13,6 +13,9 @@ public:
 
 	float hitTime; // last time this was hit
 	float burnStart;
+	ofTexture fist;
+	ofTexture monsterPunch;
+	bool punch;
 
 	// override shape
 	void getHitBy(Projectile * p);
@@ -21,4 +24,15 @@ public:
 	// override character
 	void draw();
 	void update();
+
+	
+	/*
+		punch = false => punch = true
+	*/
+	void attackPunch();
+	/*
+		Animation de l'attaque au corps à corps
+		Appelée dans le Monster::draw()
+	*/
+	void drawPunch(int, int);
 };
