@@ -56,7 +56,7 @@ void Monster::draw()
 			}
 			else if (i >= 100 && 200 > i) {
 				drawPunch(x - 100, y);
-				i += 1;
+				i += 2;
 			}
 			else {
 				punch = false;
@@ -86,9 +86,9 @@ void Monster::drawPunch(int xp,int yp)
 		ofPoint(x + currentSize, y + currentSize),
 		ofPoint(x - currentSize, y + currentSize));
 	fist.draw(
-		ofPoint(xp - 100, yp - 50),
-		ofPoint(xp + 100, yp - 50),
-		ofPoint(xp + 100, yp + 50),
-		ofPoint(xp - 100, yp + 50));
+		ofPoint(xp - 76, yp - 25),
+		ofPoint(xp + 76, yp - 25),
+		ofPoint(xp + 76, yp + 25),
+		ofPoint(xp - 76, yp + 25));
 }
 
