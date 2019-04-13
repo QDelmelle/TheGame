@@ -48,7 +48,7 @@ void Monster::draw()
 	if (isAlive) {
 		if(!punch) Character::draw();
 		ofDrawBitmapStringHighlight(std::to_string(health), x + 30, y + 30);
-		if (punch && ofGetMouseX() < x) { //si la souris se trouve à gauche du Monster
+		if (punch) { //si la souris se trouve à gauche du Monster
 			static int i = 1;
 			if (i < 100) {
 				drawPunch(x - i, y);
@@ -59,6 +59,7 @@ void Monster::draw()
 				i += 2;
 			}
 			else {
+				Character::draw();
 				punch = false;
 				i = 1;
 			}
