@@ -95,6 +95,21 @@ a faire:
 	- animations partout wouhou
 
 
+* SEANCE 7:
+
+done:
+	- animations: brûlance, explosion du missile, mourance du fantome.
+	- phantom punch!
+	- delete propre pour les projectiles
+	- delete propre pour les persos qui meurent
+TODO:
+	- debuger le pup qui marche plus (pas super utile mais qd meme)
+	- animations génériques/ comment gérer anim héritées + nouvelles?
+	- more animations!
+	- + de sons!
+	- collision phantom punch
+
+
 
 ####### AJOUT VERSION 3D: #####################################################################################
 Le jeu a été presque complètement refait en 3D:
