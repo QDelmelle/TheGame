@@ -77,6 +77,7 @@ void Shooter::checkCollisions(Body * target)
 bool Shooter::makeHit(int projIndex, Body * target)
 {
 	target->getHitBy(projectileList[projIndex]);
+	projectileList[projIndex]->Explode(10);
 	projectileList.erase(projectileList.begin() + projIndex);
 	return true;
 }

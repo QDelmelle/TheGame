@@ -17,7 +17,10 @@ public:
 	// unique
 	int angle;			// orientation par rapport à (1,0)
 	int effects[20];
-	std::vector<ofTexture> burningAnimation;
+	int ExplodeTicks;
+	int ExplodeImgNbr;
+	std::vector<ofTexture> ExplodeAnimation;
+	virtual void Explode( int );
 
 	virtual bool checkCollision(Body * target); // check if this projectile's and the 
 	//target's hitboxes are colliding.
