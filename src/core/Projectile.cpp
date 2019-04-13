@@ -21,13 +21,22 @@ void Projectile::draw() {
 	truc[3] = ofPoint(x + (currentSize*sommets[3].getRotated(angle)).x, y + (currentSize*sommets[3].getRotated(angle)).y);
 	ofTexture currentTexture;
 	if (ExplodeTicks > 0) {
-		currentTexture = ExplodeAnimation[ExplodeTicks%ExplodeImgNbr];
+		currentTexture = ExplodeAnimation[(ExplodeTicks/20)%ExplodeImgNbr];
 		ExplodeTicks--;
 	}
 	else {
 		currentTexture = texture;
 	}
 	currentTexture.draw(truc[0], truc[1], truc[2], truc[3]);
+}
+
+void Projectile::update()
+{
+	Shape::update();
+	if (isOutTheWindow()) {
+		isAlive = false;
+		pup.play();
+	}
 }
 
 void Projectile::move(ofVec2f v)
@@ -42,6 +51,7 @@ void Projectile::Explode(int arg)
 {
 	ExplodeTicks = arg;
 	move(ofVec2f(0, 0));
+	boom.play();
 	isAlive = false;
 }
 
@@ -49,7 +59,7 @@ bool Projectile::checkCollision(Body * target)
 {
 	if(target->isAlive){
 		// fancy math right there
-		return (pow(x - target->x, 2) + pow(y - target->y, 2) < pow(size + target->size, 2));
+		return (pow(x - target->x, 2) + pow(y - target->y, 2) < pow(target->size, 2));
 	} else return false;
 }
 

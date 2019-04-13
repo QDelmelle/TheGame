@@ -42,9 +42,6 @@ void Shape::update() {
 		y = y + t * speedVector.y;
 		refTime = ofGetElapsedTimef();
 	}
-	if (isOutTheWindow()) {
-		isAlive = false;
-	}
 }
 
 void Shape::move(ofVec2f v) // v = direction and velocity (not a target)

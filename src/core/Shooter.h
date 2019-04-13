@@ -16,7 +16,6 @@ public:
 	Shooter(int, int, int, string);
 	~Shooter();
 	ofSoundPlayer bang; //shooting sound
-	ofSoundPlayer pup;	//disappearing sound
 	std::vector<Projectile*> projectileList; // list of the projectiles this shooter has launched.
 	ofTexture shootingTexture; // the texture used when the Shooter is shooting
 	

@@ -9,10 +9,6 @@ Johnny::Johnny(int a, int b, int s):Shooter(a, b, s, "Johnny") //a = pos x, b = 
 	bang.setVolume(1);
 	bang.setMultiPlay(true);
 
-	pup.load("sound/pup.mp3");
-	pup.setVolume(1);
-	pup.setMultiPlay(true);
-
 	health = 100;
 	ofLoadImage(texture, "image/Gunman.png");
 	ofLoadImage(shootingTexture, "image/GunmanShooting.png");

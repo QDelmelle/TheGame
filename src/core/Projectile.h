@@ -17,6 +17,10 @@ public:
 	// unique
 	int angle;			// orientation par rapport à (1,0)
 	int effects[20];
+
+	ofSoundPlayer boom;	//exploding sound
+	ofSoundPlayer pup;	//disappearing sound
+
 	int ExplodeTicks;
 	int ExplodeImgNbr;
 	std::vector<ofTexture> ExplodeAnimation;
@@ -27,5 +31,6 @@ public:
 
 	// overrides Shape
 	virtual void draw();
+	virtual void update();
 	virtual void move(ofVec2f);
 };
