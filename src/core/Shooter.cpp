@@ -43,9 +43,8 @@ void Shooter::updateProjectiles() {
 	while (i < projectileList.size())
 	{
 		projectileList[i]->update();
-		if (projectileList[i]->isOutTheWindow()) {
+		if (!projectileList[i]->isAlive and projectileList[i]->ExplodeTicks <= 0) {
 			projectileList.erase(projectileList.begin()+i);
-			pup.play();
 		}
 		else
 			i++;
@@ -65,8 +64,8 @@ void Shooter::checkCollisions(Body * target)
 	int i = 0;
 	while (i < projectileList.size())
 	{
-		if (projectileList[i]->checkCollision(target)) {
-			if (!makeHit(i, target)) i++;
+		if (projectileList[i]->isAlive && projectileList[i]->checkCollision(target)) {
+			makeHit(i, target);
 		}
 		else {
 			i++;
@@ -74,11 +73,9 @@ void Shooter::checkCollisions(Body * target)
 	}
 }
 
-bool Shooter::makeHit(int projIndex, Body * target)
+void Shooter::makeHit(int projIndex, Body * target)
 {
 	target->getHitBy(projectileList[projIndex]);
-	projectileList[projIndex]->Explode(10);
-	projectileList.erase(projectileList.begin() + projIndex);
-	return true;
+	projectileList[projIndex]->Explode(100);
 }
 
