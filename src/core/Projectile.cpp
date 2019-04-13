@@ -53,6 +53,7 @@ void Projectile::Explode(int arg)
 	ExplodeTicks = arg;
 	move(ofVec2f(0, 0));
 	boom.play();
+	currentSize *= 4;
 	isAlive = false;
 }
 
