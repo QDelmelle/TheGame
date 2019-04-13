@@ -28,8 +28,8 @@ public:
 	void drawProjectiles();
 	void checkCollisions(Body* target); //check for collisions between the shooter's
 	//projectiles and target Shape.
-	virtual bool makeHit(int , Body * target); //function used to make collision effects
-	// happen bewteen a projectile and the target. Returns true if the projectile is destroyed.
+	virtual void makeHit(int , Body * target); //function used to make collision effects
+	// happen bewteen a projectile and the target.
 
 	//override Shape
 	virtual void update();
