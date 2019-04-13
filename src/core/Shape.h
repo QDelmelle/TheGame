@@ -16,6 +16,7 @@ public:
 	bool isMoving;
 	float refTime; // elapsed time since last update
 	bool isAlive;
+	bool deleteMe;
 
 	virtual void update(); // update size, position, etc to make it evolve.
 	virtual void draw(); // draw function, called on each frame.

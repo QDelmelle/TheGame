@@ -13,6 +13,7 @@ Shape::Shape(int a, int b, int s)
 	speedVector = ofVec2f(0, 0);
 	isMoving = false;
 	isAlive = true;
+	deleteMe = false;
 }
 
 

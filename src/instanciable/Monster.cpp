@@ -9,11 +9,20 @@ Monster::Monster(int a, int b, int s):Character(a, b, s, "Bouboule")
 	ofTexture temp;
 	ofLoadImage(temp, "image/PhantomBurning3.png");
 	burningAnimation.push_back(temp);
+
 	ofLoadImage(temp, "image/PhantomBurning4.png");
 	burningAnimation.push_back(temp);
+
 	ofLoadImage(fist, "image/PhantomFist.png");
 	ofLoadImage(monsterPunch, "image/PhantomPunch.png");
 
+	for (int i = 1; i < 11; i++) {
+		ofTexture tempPrime;
+		ofLoadImage(tempPrime, "image/PhantomDying"+to_string(i)+".png");
+		deathAnimation.push_back(tempPrime);
+	}
+
+	deathAnimTicks = 119; //TODO : faire un calcule en fonction de la durée et du nombre de frames
 	health = 200;
 	punch = false;
 	///effectsDodged.push_back(3);
@@ -21,7 +30,7 @@ Monster::Monster(int a, int b, int s):Character(a, b, s, "Bouboule")
 
 Monster::~Monster()
 {
-
+	printf("Monster::Destructeur\n");
 }
 
 /*
@@ -45,37 +54,34 @@ void Monster::move(ofVec2f v)
 
 void Monster::draw()
 {
-	if (isAlive) {
-		if(!punch) Character::draw();
-		ofDrawBitmapStringHighlight(std::to_string(health), x + 30, y + 30);
-		if (punch) { 
-			static int i = 16;
-			if (i < 40) {
-				drawPunch(x - 16, y);
-				i += 2;
-			}
-			else if (i >= 40 && i < 130) {
-				drawPunch(x - (i-24), y);
-				i += 7;
-			}
-			else if (i >= 130 && 210 > i) {
-				drawPunch(x - 130, y);
-				i += 2;
-			}
-			else {
-				Character::draw();
-				punch = false;
-				i = 15;
-			}
+	if(!punch) Character::draw();
+	ofDrawBitmapStringHighlight(std::to_string(health), x + 30, y + 30);
+	if (punch) { 
+		static int i = 16;
+		if (i < 40) {
+			drawPunch(x - 16, y);
+			i += 2;
+		}
+		else if (i >= 40 && i < 130) {
+			drawPunch(x - (i-24), y);
+			i += 7;
+		}
+		else if (i >= 130 && 210 > i) {
+			drawPunch(x - 130, y);
+			i += 2;
+		}
+		else {
+			Character::draw();
+			punch = false;
+			i = 15;
 		}
 	}
+	
 }
 
 void Monster::update()
 {
-	if(isAlive){
-		Character::update();
-	}
+	Character::update();
 }
 
 void Monster::attackPunch()

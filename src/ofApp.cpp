@@ -27,6 +27,11 @@ void ofApp::update(){
 	//Boucle pour update les monstres
 	for (int i = 0; i < monsters.size(); i++) {
 		monsters[i]->update();
+		if (monsters[i]->deleteMe) {
+			delete monsters[i];
+			monsters.erase(monsters.begin() + i);
+			i--;
+		}
 	}
 
 	//Boucle pour checker collision qvec chaque monster
