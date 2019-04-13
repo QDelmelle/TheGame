@@ -48,20 +48,24 @@ void Monster::draw()
 	if (isAlive) {
 		if(!punch) Character::draw();
 		ofDrawBitmapStringHighlight(std::to_string(health), x + 30, y + 30);
-		if (punch) { //si la souris se trouve à gauche du Monster
-			static int i = 1;
-			if (i < 100) {
-				drawPunch(x - i, y);
-				i += 5;
+		if (punch) { 
+			static int i = 16;
+			if (i < 40) {
+				drawPunch(x - 16, y);
+				i += 2;
 			}
-			else if (i >= 100 && 200 > i) {
-				drawPunch(x - 100, y);
+			else if (i >= 40 && i < 130) {
+				drawPunch(x - (i-24), y);
+				i += 7;
+			}
+			else if (i >= 130 && 210 > i) {
+				drawPunch(x - 130, y);
 				i += 2;
 			}
 			else {
 				Character::draw();
 				punch = false;
-				i = 1;
+				i = 15;
 			}
 		}
 	}
@@ -87,9 +91,9 @@ void Monster::drawPunch(int xp,int yp)
 		ofPoint(x + currentSize, y + currentSize),
 		ofPoint(x - currentSize, y + currentSize));
 	fist.draw(
-		ofPoint(xp - 76, yp - 25),
-		ofPoint(xp + 76, yp - 25),
-		ofPoint(xp + 76, yp + 25),
-		ofPoint(xp - 76, yp + 25));
+		ofPoint(xp - 44, yp - 25),
+		ofPoint(xp + 44, yp - 25),
+		ofPoint(xp + 44, yp + 25),
+		ofPoint(xp - 44, yp + 25));
 }
 
