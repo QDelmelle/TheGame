@@ -17,6 +17,7 @@ Missile::Missile(int a, int b, int s) :Projectile(a, b, s) {
 	pup.load("sound/pup.mp3");
 	pup.setVolume(1);
 	pup.setMultiPlay(true);
+
 	//	effects
 	effects[PHYSICAL] = 50;
 	effects[BURN] = 5;

@@ -29,7 +29,7 @@ void Shooter::draw()
 {
 	drawProjectiles();
 
-	if (projectileList.size() > 0 && ofGetElapsedTimef() - shotTime < .3) {
+	if (projectileList.size() > 0 and ofGetElapsedTimef() - shotTime < .3) {
 		shootingTexture.draw(ofPoint(x - currentSize, y - currentSize), ofPoint(x + currentSize, y - currentSize), ofPoint(x + currentSize, y + currentSize), ofPoint(x - currentSize, y + currentSize));
 	}
 	else
@@ -44,6 +44,7 @@ void Shooter::updateProjectiles() {
 	{
 		projectileList[i]->update();
 		if (!projectileList[i]->isAlive and projectileList[i]->ExplodeTicks <= 0) {
+			delete projectileList[i];
 			projectileList.erase(projectileList.begin()+i);
 		}
 		else

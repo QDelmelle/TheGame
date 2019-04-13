@@ -7,10 +7,11 @@ Projectile::Projectile(int a, int b, int s) :Shape(a, b, s){
 	sommets[2] = ofVec2f(cos(-PI / 6), sin(-PI / 6));
 	sommets[3] = ofVec2f(cos(PI / 6 - PI), sin(PI / 6 - PI));
 	angle = 0;
+	ExplodeTicks = 0;
 }
 
 Projectile::~Projectile() {
-
+	printf("hey\n");
 }
 
 void Projectile::draw() {
