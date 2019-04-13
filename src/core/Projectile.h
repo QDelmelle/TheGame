@@ -13,11 +13,12 @@ public:
 
 	ofTexture texture;
 	ofVec2f sommets[4];
-	int angle;			// orientation par rapport à (1,0)
-	int dmgOnHit;
-	int effects[20];
 
-	virtual void affect(Body * target);		// affect target by exploding in its face
+	// unique
+	int angle;			// orientation par rapport à (1,0)
+	int effects[20];
+	std::vector<ofTexture> burningAnimation;
+
 	virtual bool checkCollision(Body * target); // check if this projectile's and the 
 	//target's hitboxes are colliding.
 

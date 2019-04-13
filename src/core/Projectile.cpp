@@ -37,8 +37,4 @@ bool Projectile::checkCollision(Body * target)
 	} else return false;
 }
 
-void Projectile::affect(Body * target)
-{
-
-}
 
