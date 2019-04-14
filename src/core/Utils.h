@@ -19,4 +19,9 @@ public:
 		INVINCIBLE,
 		INVISIBLE,
 	};
+	enum status {
+		ALIVE,
+		DYING,
+		DEAD,
+	};
 };
