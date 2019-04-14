@@ -1,6 +1,7 @@
 #pragma once
 
 #include "ofMain.h" //to access ofVec2f
+#include "Utils.h"
 ///#include "Projectile.h"
 ///class Projectile;
 // shape: any drawable moving or static object must implement this.

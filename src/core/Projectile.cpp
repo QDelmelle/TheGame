@@ -11,7 +11,6 @@ Projectile::Projectile(int a, int b, int s) :Shape(a, b, s){
 }
 
 Projectile::~Projectile() {
-	printf("hey\n");
 }
 
 void Projectile::draw() {
@@ -59,7 +58,7 @@ void Projectile::Explode(int arg)
 
 bool Projectile::checkCollision(Body * target)
 {
-	if(target->isAlive){
+	if(target->status == Utils::ALIVE){
 		// fancy math right there
 		return (pow(x - target->x, 2) + pow(y - target->y, 2) < pow(target->size, 2));
 	} else return false;

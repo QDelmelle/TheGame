@@ -55,8 +55,8 @@ void Johnny::draw()
 
 void Johnny::getHitBy(Projectile * p)
 {
-	health -= p->effects[PHYSICAL];
-	burnDmg = max(burnDmg, p->effects[BURN]);
+	health -= p->effects[Utils::PHYSICAL];
+	burnDmg = max(burnDmg, p->effects[Utils::BURN]);
 	burnTicks = 10;
 	burnTime = ofGetElapsedTimef();
 }

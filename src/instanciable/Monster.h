@@ -1,7 +1,7 @@
 #pragma once
 
 #include "../core/Character.h"
-#include "../core/EffectClass.h"
+#include "../core/Utils.h"
 #include "ofMain.h"
 
 class Monster:public Character

@@ -39,10 +39,10 @@ Monster::~Monster()
 */
 void Monster::getHitBy(Projectile * p)
 {
-	printf("%d", health);
-	health -= p->effects[PHYSICAL];
-	printf("%d", health);
-	burnDmg = max(burnDmg, p->effects[BURN]);
+	health -= p->effects[Utils::PHYSICAL];
+	// pas propre
+	ActiveEffects.insert(Utils::BURN);
+	burnDmg = max(burnDmg, p->effects[Utils::BURN]);
 	burnTicks = 10;
 	burnTime = ofGetElapsedTimef();
 }

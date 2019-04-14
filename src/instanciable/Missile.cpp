@@ -19,6 +19,6 @@ Missile::Missile(int a, int b, int s) :Projectile(a, b, s) {
 	pup.setMultiPlay(true);
 
 	//	effects
-	effects[PHYSICAL] = 50;
-	effects[BURN] = 5;
+	effects[Utils::PHYSICAL] = 50;
+	effects[Utils::BURN] = 5;
 }

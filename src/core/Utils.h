@@ -4,7 +4,7 @@
 
 class Utils {
 public:
-	enum effect {
+	enum Effect {
 		PHYSICAL,
 		MAGIC,
 		POISON,
@@ -19,7 +19,7 @@ public:
 		INVINCIBLE,
 		INVISIBLE,
 	};
-	enum status {
+	enum Status {
 		ALIVE,
 		DYING,
 		DEAD,

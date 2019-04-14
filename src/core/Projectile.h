@@ -16,7 +16,7 @@ public:
 
 	// unique
 	int angle;			// orientation par rapport à (1,0)
-	int effects[20];
+	int effects[20];	// puissance par effet
 
 	ofSoundPlayer boom;	//exploding sound
 	ofSoundPlayer pup;	//disappearing sound
