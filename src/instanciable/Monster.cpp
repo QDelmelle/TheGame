@@ -16,13 +16,13 @@ Monster::Monster(int a, int b, int s):Character(a, b, s, "Bouboule")
 	ofLoadImage(fist, "image/PhantomFist.png");
 	ofLoadImage(monsterPunch, "image/PhantomPunch.png");
 
-	for (int i = 1; i < 11; i++) {
+	for (int i = 1; i < 18; i++) {
 		ofTexture tempPrime;
 		ofLoadImage(tempPrime, "image/PhantomDying"+to_string(i)+".png");
 		deathAnimation.push_back(tempPrime);
 	}
 
-	deathAnimTicks = 119; //TODO : faire un calcule en fonction de la durée et du nombre de frames
+	deathAnimTicks = 200; //TODO : faire un calcule en fonction de la durée et du nombre de frames
 	health = 200;
 	punch = false;
 	///effectsDodged.push_back(3);
