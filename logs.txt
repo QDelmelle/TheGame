@@ -109,6 +109,13 @@ TODO:
 	- + de sons!
 	- collision phantom punch
 
+* SEANCE 8:
+
+done :
+	- pup
+TODO :
+	- Améliorer le temps d'instanciation des Monsters (preload textures)
+
 
 
 ####### AJOUT VERSION 3D: #####################################################################################

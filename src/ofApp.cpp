@@ -4,7 +4,9 @@
 void ofApp::setup(){
 	s1 = new Missile(500, 500, 100);
 	John = new Johnny(200, 200, 150);
-	monsters.push_back(new Monster(1500, 500, 150));
+	Monster *Bouboule = new Monster(1500, 500, 150);
+	Bouboule->addTarget(John);
+	monsters.push_back(Bouboule);
 
 	//setup gui => dans le futur, 1 gui par objet
 	

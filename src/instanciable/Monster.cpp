@@ -4,7 +4,7 @@
 Monster::Monster(int a, int b, int s):Character(a, b, s, "Bouboule")
 //a = pos x, b = pos y, s = size, hp = health points
 {
-	//Texture loading
+	//Texture loading => beurk
 	ofLoadImage(texture, "image/Phantom.png");
 	ofTexture temp;
 	ofLoadImage(temp, "image/PhantomBurning3.png");
@@ -66,7 +66,12 @@ void Monster::draw()
 			drawPunch(x - (i-24), y);
 			i += 7;
 		}
-		else if (i >= 130 && 210 > i) {
+		else if (i >= 130 && i < 137) {
+			drawPunch(x - 130, y);
+			meleeHit();
+			i += 7;
+		}
+		else if (i >= 137 && 210 > i) {
 			drawPunch(x - 130, y);
 			i += 2;
 		}
@@ -101,5 +106,24 @@ void Monster::drawPunch(int xp,int yp)
 		ofPoint(xp + 44, yp - 25),
 		ofPoint(xp + 44, yp + 25),
 		ofPoint(xp - 44, yp + 25));
+}
+
+void Monster::addTarget(Body * target)
+{
+	targets.push_back(target);
+	printf("target added\n");
+	printf("%d = size, %d = size*size\n", size, size*size);
+	
+}
+
+void Monster::meleeHit()
+{
+	for (int i = 0; i < targets.size(); i++) {
+		if ((pow(targets[i]->x - x, 2) + pow(targets[i]->y - y, 2)) < size*size*2) {
+			targets[i]->health -= 10;
+		}
+		else
+			printf("Raté ! :p\n");
+	}
 }
 

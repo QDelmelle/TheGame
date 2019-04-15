@@ -21,6 +21,7 @@ public:
 	ofSoundPlayer boom;	//exploding sound
 	ofSoundPlayer pup;	//disappearing sound
 
+	int pupTicks;
 	int ExplodeTicks;
 	int ExplodeImgNbr;
 	std::vector<ofTexture> ExplodeAnimation;

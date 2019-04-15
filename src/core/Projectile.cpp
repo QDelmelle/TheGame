@@ -1,4 +1,5 @@
 #include "Projectile.h"
+#include <thread>
 
 Projectile::Projectile(int a, int b, int s) :Shape(a, b, s){
 	//ofLoadImage(texture, "image/Projectile.png");
@@ -8,6 +9,7 @@ Projectile::Projectile(int a, int b, int s) :Shape(a, b, s){
 	sommets[3] = ofVec2f(cos(PI / 6 - PI), sin(PI / 6 - PI));
 	angle = 0;
 	ExplodeTicks = 0;
+	pupTicks = 0;
 }
 
 Projectile::~Projectile() {
@@ -37,8 +39,12 @@ void Projectile::update()
 {
 	Shape::update();
 	if (isOutTheWindow()) {
-		deleteMe = true;
-		pup.play();
+		if (pupTicks == 0)
+			pup.play();
+		pupTicks++;
+		if (pupTicks > 20) {
+			deleteMe = true;
+		}
 	}
 }
 
@@ -66,5 +72,3 @@ bool Projectile::checkCollision(Body * target)
 		return (pow(x - target->x, 2) + pow(y - target->y, 2) < pow(target->size, 2));
 	} else return false;
 }
-
-

@@ -16,6 +16,7 @@ public:
 	ofTexture fist;
 	ofTexture monsterPunch;
 	bool punch;
+	std::vector<Body*> targets;
 
 	// override shape
 	void getHitBy(Projectile * p);
@@ -35,4 +36,8 @@ public:
 		Appelée dans le Monster::draw()
 	*/
 	void drawPunch(int, int);
+
+	void meleeHit();
+
+	void addTarget(Body * target);
 };
