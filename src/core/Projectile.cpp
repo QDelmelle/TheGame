@@ -11,6 +11,7 @@ Projectile::Projectile(int a, int b, int s) :Shape(a, b, s){
 }
 
 Projectile::~Projectile() {
+
 }
 
 void Projectile::draw() {
@@ -23,6 +24,8 @@ void Projectile::draw() {
 	if (ExplodeTicks > 0) {
 		currentTexture = ExplodeAnimation[(ExplodeTicks/20)%ExplodeImgNbr];
 		ExplodeTicks--;
+		if (ExplodeTicks == 0)
+			deleteMe = true;
 	}
 	else {
 		currentTexture = texture;
@@ -34,7 +37,7 @@ void Projectile::update()
 {
 	Shape::update();
 	if (isOutTheWindow()) {
-		isAlive = false;
+		deleteMe = true;
 		pup.play();
 	}
 }

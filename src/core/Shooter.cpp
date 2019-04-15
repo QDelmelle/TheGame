@@ -43,7 +43,7 @@ void Shooter::updateProjectiles() {
 	while (i < projectileList.size())
 	{
 		projectileList[i]->update();
-		if (!projectileList[i]->isAlive and projectileList[i]->ExplodeTicks <= 0) {
+		if (projectileList[i]->deleteMe) {
 			delete projectileList[i];
 			projectileList.erase(projectileList.begin()+i);
 		}
