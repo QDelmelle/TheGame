@@ -2,6 +2,8 @@
 #include "Shape.h"
 #include "Projectile.h"
 
+#include "ofxGui.h"
+
 class Projectile;
 
 class Body : public Shape
@@ -22,6 +24,13 @@ public:
 	int burnDmg;	// burning Damage the bidy takes at each tick.
 	float burnTime; // number of s. since the last tick of burning (1 tick= 1/2 s)
 	int deathAnimTicks;
+
+	//------------------------------------------------------
+	//work in progress (GUI)
+	ofxPanel menu;
+	ofxLabel guiHealth;
+	virtual void setupPersonnalMenu();
+
 	
 	//override Shape
 	virtual void draw();

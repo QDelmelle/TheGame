@@ -9,6 +9,7 @@
 #include "vector"
 #include "ofxGui.h"
 #include "ofParameter.h"
+#include "instanciable/Knight.h"
 
 class ofApp : public ofBaseApp{
 
@@ -32,6 +33,7 @@ class ofApp : public ofBaseApp{
 		Missile *s1;
 		Johnny * John;
 		Character * C;
+		Knight * knight;
 		vector<Monster*> monsters;
 
 		//gui

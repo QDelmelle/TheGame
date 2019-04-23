@@ -11,10 +11,19 @@ Body::Body(int a, int b, int s):Shape(a, b, s)
 	burnTicks = 0;
 	burnDmg = 0;
 	deathAnimTicks = 1;
+
+	setupPersonnalMenu();
 }
 
 Body::~Body()
 {
+}
+
+
+void Body::setupPersonnalMenu()
+{
+	menu.setup("Body", "bodySettings.xml", x + 10, y + 10);
+	menu.add(guiHealth.setup("Health = ", ofToString(health)));
 }
 
 
@@ -48,6 +57,8 @@ void Body::draw()
 		ofPoint(x + currentSize, y - currentSize),
 		ofPoint(x + currentSize, y + currentSize),
 		ofPoint(x - currentSize, y + currentSize));
+
+	menu.draw();
 }
 
 void Body::update()

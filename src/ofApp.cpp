@@ -8,6 +8,8 @@ void ofApp::setup(){
 	Bouboule->addTarget(John);
 	monsters.push_back(Bouboule);
 
+	knight = new Knight(200, 500, 150, "Arthur");
+
 	//setup gui => dans le futur, 1 gui par objet
 	
 	gui.setup("Paramètres de John"); // most of the time you don't need a name
@@ -26,6 +28,10 @@ void ofApp::update(){
 	s1->update();
 	ofSoundUpdate();
 	John->update();
+	knight->update();
+
+
+
 	//Boucle pour update les monstres
 	for (int i = 0; i < monsters.size(); i++) {
 		monsters[i]->update();
@@ -56,6 +62,7 @@ void ofApp::update(){
 void ofApp::draw(){
 	s1->draw();
 	John->draw();
+	knight->draw();
 	for (int i = 0; i < monsters.size(); i++) {
 		monsters[i]->draw();
 	}
