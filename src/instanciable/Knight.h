@@ -6,6 +6,8 @@ public:
 	Knight(int, int, int, string);
 	~Knight();
 
+	ofTexture slashtexture;
+
 	//override
 	void getHitBy(Projectile * p);
 };
