@@ -13,7 +13,7 @@ using namespace std;
 class Shooter:public Character
 {
 public:
-	Shooter(int, int, int, string);
+	Shooter(int, int, int, DataManager* dm, string);
 	~Shooter();
 	ofSoundPlayer bang; //shooting sound
 	std::vector<Projectile*> projectileList; // list of the projectiles this shooter has launched.
@@ -23,7 +23,9 @@ public:
 							//rem : viens de la classe Johnny
 	
 	void updateProjectiles();
-	virtual void shoot();	// shoot an object and add it to projectiles.
+
+	virtual void shoot() = 0;	// abstract
+
 	void drawProjectiles();
 	void checkCollisions(Body* target); //check for collisions between the shooter's
 	//projectiles and target Shape.
@@ -33,4 +35,8 @@ public:
 	//override Shape
 	virtual void update();
 	virtual void draw();
+
+protected:
+	void shoot(Projectile*);	// shoot an object and add it to projectiles.
+
 };

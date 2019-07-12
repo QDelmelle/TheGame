@@ -1,7 +1,7 @@
 #include "Projectile.h"
 #include <thread>
 
-Projectile::Projectile(int a, int b, int s) :Shape(a, b, s){
+Projectile::Projectile(int a, int b, int s, DataManager* dm) :Shape(a, b, s, dm){
 	//ofLoadImage(texture, "image/Projectile.png");
 	sommets[0] = ofVec2f(cos(PI - PI/6), sin(PI - PI / 6));
 	sommets[1] = ofVec2f(cos(PI / 6), sin(PI / 6));

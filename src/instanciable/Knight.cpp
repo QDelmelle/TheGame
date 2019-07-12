@@ -1,11 +1,10 @@
 #include "Knight.h"
 
 
-Knight::Knight(int a, int b, int s, string name):Character(a, b, s, name)
+Knight::Knight(int a, int b, int s, DataManager* dm, string name):Character(a, b, s, dm, name)
 {
-	ofLoadImage(texture, "image/Knight.png");
-	ofLoadImage(slashtexture, "image/KnightSlashing.png");
 	health = 500;
+	loadData(dm);
 }
 
 Knight::~Knight()
@@ -16,4 +15,13 @@ Knight::~Knight()
 void Knight::getHitBy(Projectile * p)
 {
 	health -= p->effects[Utils::PHYSICAL];
+}
+
+void Knight::loadData(DataManager * dm)
+{
+	//load textures
+	texture = dm->textures[28];
+	slashtexture = dm->textures[29];
+
+	//load sounds
 }

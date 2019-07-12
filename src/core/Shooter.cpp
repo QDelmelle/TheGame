@@ -1,6 +1,6 @@
 #include "Shooter.h"
 
-Shooter::Shooter(int a, int b, int s, string name):Character(a,b,s, name)
+Shooter::Shooter(int a, int b, int s, DataManager* dm, string name):Character(a,b,s, dm, name)
 {
 	// load sounds
 	
@@ -11,12 +11,12 @@ Shooter::~Shooter()
 
 }
 
-void Shooter::shoot()
+void Shooter::shoot(Projectile *projectile)
 {
-	Projectile *projectile = new Projectile(x, y, size / 4);
 	projectile->move(ofVec2f(ofGetMouseX() - x, ofGetMouseY() - y));
 	projectileList.push_back(projectile);
 	bang.play();
+	shotTime = ofGetElapsedTimef();
 	//TODO : draw shooting texture
 }
 

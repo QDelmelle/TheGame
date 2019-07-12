@@ -1,24 +1,24 @@
 #include "Missile.h"
 
-Missile::Missile(int a, int b, int s) :Projectile(a, b, s) {
-	//	textures
-	ofLoadImage(texture, "image/Missile.png");
-	ofTexture temp;
-	ofLoadImage(temp, "image/Explosion1.png");
-	ExplodeAnimation.push_back(temp);
-	ofLoadImage(temp, "image/Explosion2.png");
-	ExplodeAnimation.push_back(temp);
+Missile::Missile(int a, int b, int s, DataManager* dm) :Projectile(a, b, s, dm) {
 	ExplodeImgNbr = 2;
-
-	//	sounds
-	boom.load("sound/pup.mp3");
-	boom.setVolume(1);
-	boom.setMultiPlay(true);
-	pup.load("sound/pup.mp3");
-	pup.setVolume(1);
-	pup.setMultiPlay(true);
+	loadData(dm);
 
 	//	effects
 	effects[Utils::PHYSICAL] = 50;
 	effects[Utils::BURN] = 5;
 }
+ 
+void Missile::loadData(DataManager* dm)
+{
+	// images
+	texture = dm->textures[0];
+	ExplodeAnimation.push_back(dm->textures[1]);
+	ExplodeAnimation.push_back(dm->textures[2]);
+
+	// sounds
+	boom = dm->sounds[0];
+	pup = dm->sounds[1];
+}
+
+

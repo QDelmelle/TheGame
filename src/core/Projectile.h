@@ -8,7 +8,7 @@ class Body;
 class Projectile :public Shape 
 {
 public:
-	Projectile(int, int, int);
+	Projectile(int, int, int, DataManager*);
 	~Projectile();
 
 	ofTexture texture;

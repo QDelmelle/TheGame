@@ -1,4 +1,4 @@
-﻿* SEANCE 1:
+* SEANCE 1:
 - OF fonctionnel sur portable
 - 1re version test de trucs qui bougent en 2D:
 fait: 	- afficher qq formes, les déformer/ déplacer
@@ -116,6 +116,14 @@ done :
 	- collision punch du Monster
 TODO :
 	- Améliorer le temps d'instanciation des Monsters (preload textures)
+	- coup melee
+
+* SEANCE 9:
+
+done: 
+	- prout
+	- regroupement des textures & sons, objet DataManager.
+	- chargement des textures à l'avance
 
 
 

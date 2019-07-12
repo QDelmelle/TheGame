@@ -6,7 +6,7 @@
 class Character:public Body
 {
 public:
-	Character(int, int, int, string);
+	Character(int, int, int, DataManager* dm, string);
 	~Character();
 
 	// new

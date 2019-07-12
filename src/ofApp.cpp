@@ -2,13 +2,20 @@
 
 //--------------------------------------------------------------
 void ofApp::setup(){
-	s1 = new Missile(500, 500, 100);
-	John = new Johnny(200, 200, 150);
-	Monster *Bouboule = new Monster(1500, 500, 150);
+
+	dm = new DataManager(50, 5);
+	dm->loadTextures();
+	dm->loadSounds();
+
+	s1 = new Missile(500, 500, 100, dm);
+	John = new Johnny(200, 200, 150, dm);
+	
+	
+	Monster *Bouboule = new Monster(1500, 500, 150, dm);
 	Bouboule->addTarget(John);
 	monsters.push_back(Bouboule);
 
-	knight = new Knight(200, 500, 150, "Arthur");
+	knight = new Knight(200, 500, 150, dm, "Arthur");
 
 	//setup gui => dans le futur, 1 gui par objet
 	
@@ -28,10 +35,10 @@ void ofApp::update(){
 	s1->update();
 	ofSoundUpdate();
 	John->update();
-	knight->update();
+	//knight->update();
 
 
-
+	
 	//Boucle pour update les monstres
 	for (int i = 0; i < monsters.size(); i++) {
 		monsters[i]->update();
@@ -66,7 +73,7 @@ void ofApp::draw(){
 	for (int i = 0; i < monsters.size(); i++) {
 		monsters[i]->draw();
 	}
-
+	//dm->printTextures();
 	// infos generales
 	ofDrawBitmapStringHighlight(std::to_string(ofGetElapsedTimef()), 0, 30);
 	ofDrawBitmapStringHighlight(std::to_string(ofGetFrameRate()), ofGetWidth()-100, 15);
@@ -92,7 +99,7 @@ void ofApp::keyPressed(int key){
 		s1->move(ofVec2f(100, 100));
 		break;
 	case 'p':
-		monsters.push_back(new Monster(mouseX, mouseY, 150));
+		monsters.push_back(new Monster(mouseX, mouseY, 150, dm));
 		break;
 	case 'm':
 		monsters[0]->attackPunch();
@@ -122,11 +129,11 @@ void ofApp::mousePressed(int x, int y, int button){
 		John->setPos(x, y);
 	if (selectedBouboule && button == OF_MOUSE_BUTTON_1)
 		monsters[0]->setPos(x, y);
-	/*
-	OF_MOUSE_BUTTON_1 = left clic
-	OF_MOUSE_BUTTON_2 = clic wheel
+	
+	// OF_MOUSE_BUTTON_1 = left clic
+	// OF_MOUSE_BUTTON_2 = clic wheel
 
-	*/
+	
 }
 
 //--------------------------------------------------------------

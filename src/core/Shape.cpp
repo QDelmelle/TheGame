@@ -4,8 +4,10 @@
 
 // default methods for class Shape
 
-Shape::Shape(int a, int b, int s)
+Shape::Shape(int a, int b, int s, DataManager* dm)
 {
+	this->dm = dm;
+	//this->loadData(dm);
 	x = a;
 	y = b;
 	size = s;
@@ -33,7 +35,6 @@ void Shape::draw() {
 	ofVertex(x, y - currentSize);
 	ofEndShape();
 }
-
 
 void Shape::update() {
 	//currentSize = size*(1+0.24*sin(3* ofGetElapsedTimef())/2); // pulsating

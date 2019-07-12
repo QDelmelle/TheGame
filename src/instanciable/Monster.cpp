@@ -1,27 +1,10 @@
 
 #include "Monster.h"
 
-Monster::Monster(int a, int b, int s):Character(a, b, s, "Bouboule")
+Monster::Monster(int a, int b, int s, DataManager* dm):Character(a, b, s, dm, "Bouboule")
 //a = pos x, b = pos y, s = size, hp = health points
 {
-	//Texture loading => beurk
-	ofLoadImage(texture, "image/Phantom.png");
-	ofTexture temp;
-	ofLoadImage(temp, "image/PhantomBurning3.png");
-	burningAnimation.push_back(temp);
-
-	ofLoadImage(temp, "image/PhantomBurning4.png");
-	burningAnimation.push_back(temp);
-
-	ofLoadImage(fist, "image/PhantomFist.png");
-	ofLoadImage(monsterPunch, "image/PhantomPunch.png");
-
-	for (int i = 1; i < 18; i++) {
-		ofTexture tempPrime;
-		ofLoadImage(tempPrime, "image/PhantomDying"+to_string(i)+".png");
-		deathAnimation.push_back(tempPrime);
-	}
-
+	loadData(dm);
 	deathAnimTicks = 200; //TODO : faire un calcule en fonction de la durée et du nombre de frames
 	health = 200;
 	punch = false;
@@ -50,6 +33,21 @@ void Monster::getHitBy(Projectile * p)
 void Monster::move(ofVec2f v)
 {
 	Shape::move(v);
+}
+
+void Monster::loadData(DataManager *dm)
+{
+	//load textures
+	texture = dm->textures[5];
+	burningAnimation.push_back(dm->textures[6]);
+	burningAnimation.push_back(dm->textures[7]);
+	fist = dm->textures[26];
+	monsterPunch = dm->textures[27];
+
+	for (int i = 1; i < 18; i++) {
+		deathAnimation.push_back(dm->textures[i+8]);
+	}
+	//load sounds
 }
 
 void Monster::draw()

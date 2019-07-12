@@ -7,7 +7,7 @@
 class Johnny:public Shooter
 {
 public:
-	Johnny(int, int, int);
+	Johnny(int, int, int, DataManager*);
 	~Johnny();
 
 	// new
@@ -15,6 +15,9 @@ public:
 	int roundsLeft;	// nbre de proj. restants à tirer
 	float rps;			// nbre de proj à tirer/sec
 	
+
+	// overrides shape
+	void loadData(DataManager*); // loads all textures and sounds from ofApp
 
 	//@override Shooter
 	void update();

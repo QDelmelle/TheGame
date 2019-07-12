@@ -10,6 +10,7 @@
 #include "ofxGui.h"
 #include "ofParameter.h"
 #include "instanciable/Knight.h"
+#include "DataManager.h"
 
 class ofApp : public ofBaseApp{
 
@@ -48,4 +49,6 @@ class ofApp : public ofBaseApp{
 		ofxLabel screenSize;
 
 		ofxPanel gui;
+		DataManager* dm;
+
 };

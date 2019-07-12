@@ -9,7 +9,7 @@ class Projectile;
 class Body : public Shape
 {
 public:
-	Body(int a, int b, int s);
+	Body(int a, int b, int s, DataManager* dm);
 	~Body();
 
 	// Body only

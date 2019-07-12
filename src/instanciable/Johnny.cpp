@@ -2,7 +2,7 @@
 #include "Johnny.h"
 
 
-Johnny::Johnny(int a, int b, int s):Shooter(a, b, s, "Johnny") //a = pos x, b = pos y, s = size, hp = health points
+Johnny::Johnny(int a, int b, int s, DataManager* dm):Shooter(a, b, s, dm, "Johnny") //a = pos x, b = pos y, s = size, hp = health points
 {
 
 	bang.load("sound/Piou.mp3");
@@ -10,11 +10,10 @@ Johnny::Johnny(int a, int b, int s):Shooter(a, b, s, "Johnny") //a = pos x, b = 
 	bang.setMultiPlay(true);
 
 	health = 100;
-	ofLoadImage(texture, "image/Gunman.png");
-	ofLoadImage(shootingTexture, "image/GunmanShooting.png");
 	roundsLeft = 0;
 	rps = 1;
 	shotTime = 0;
+	loadData(dm);
 }
 
 Johnny::~Johnny()
@@ -22,6 +21,12 @@ Johnny::~Johnny()
 
 }
 
+
+void Johnny::loadData(DataManager* dm)
+{
+	texture = dm->textures[3];
+	shootingTexture = dm->textures[4];
+}
 
 void Johnny::update()
 {
@@ -39,12 +44,10 @@ void Johnny::canarder(int mun, float rps)
 	this->rps = rps;
 }
 
-void Johnny::shoot() //redondant => existe déjà dans shooter
+void Johnny::shoot()
 {
-	Projectile * projectile = new Missile(x, y, size / 4);
-	projectile->move(ofVec2f(ofGetMouseX() - x, ofGetMouseY() - y));
-	projectileList.push_back(projectile);
-	bang.play();
+	Missile* m = new Missile(x, y, size / 4, dm);
+	Shooter::shoot(m);
 }
 
 void Johnny::draw()

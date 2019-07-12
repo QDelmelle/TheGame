@@ -8,7 +8,7 @@ class Monster:public Character
 {
 public:
 	//Monster(posX, posY, size)
-	Monster(int, int, int);
+	Monster(int, int, int, DataManager*);
 	~Monster();
 
 	float hitTime; // last time this was hit
@@ -21,6 +21,7 @@ public:
 	// override shape
 	void getHitBy(Projectile * p);
 	void move(ofVec2f v);
+	void loadData(DataManager *);
 
 	// override character
 	void draw();

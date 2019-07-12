@@ -1,7 +1,7 @@
 #include "Body.h"
 #include "Projectile.h"
 
-Body::Body(int a, int b, int s):Shape(a, b, s)
+Body::Body(int a, int b, int s, DataManager* dm):Shape(a, b, s, dm)
 {
 	ofLoadImage(texture, "image/inconnu.png");
 	status = Utils::ALIVE;
