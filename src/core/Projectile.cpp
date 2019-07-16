@@ -39,8 +39,10 @@ void Projectile::update()
 {
 	Shape::update();
 	if (isOutTheWindow()) {
-		if (pupTicks == 0)
+		if (pupTicks == 0) {
+			isAlive = false;
 			pup.play();
+		}
 		pupTicks++;
 		if (pupTicks > 20) {
 			deleteMe = true;

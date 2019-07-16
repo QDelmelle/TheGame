@@ -8,6 +8,8 @@ public:
 
 	ofTexture slashtexture;
 
+	void slash();
+
 	//override
 	void getHitBy(Projectile * p);
 	void loadData(DataManager *);

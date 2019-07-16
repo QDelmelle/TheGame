@@ -41,6 +41,7 @@ void DataManager::loadSounds()
 {
 	sounds[0].load("sound/prout.mp3");
 	sounds[1].load("sound/pup.mp3");
+	sounds[2].load("sound/piou.mp3");
 
 
 	for (int i = 0; i < sounds.size(); i++) {

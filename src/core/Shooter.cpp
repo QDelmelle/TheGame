@@ -17,7 +17,6 @@ void Shooter::shoot(Projectile *projectile)
 	projectileList.push_back(projectile);
 	bang.play();
 	shotTime = ofGetElapsedTimef();
-	//TODO : draw shooting texture
 }
 
 void Shooter::update() {

@@ -35,7 +35,7 @@ void ofApp::update(){
 	s1->update();
 	ofSoundUpdate();
 	John->update();
-	//knight->update();
+	knight->update();
 
 
 	
@@ -53,7 +53,10 @@ void ofApp::update(){
 	for(Monster* m : monsters)
 		John->checkCollisions(m);
 
-	if (selectedJohn && !oldJohn) { // -TODO : mettre les 2 if dans une fonctions
+	John->checkCollisions(knight);
+
+
+	if (selectedJohn && !oldJohn) { // -TODO : mettre les 2 if dans une fonction
 		selectedBouboule.set(false);
 		oldJohn = true;
 		oldBouboule = false;
@@ -103,14 +106,47 @@ void ofApp::keyPressed(int key){
 		break;
 	case 'm':
 		monsters[0]->attackPunch();
+		break;
+	case 57356:
+		knight->move(ofVec2f(-100, 0));
+		break;
+	case 57357:
+		knight->move(ofVec2f(0, -100));
+		break;
+	case 57358:
+		knight->move(ofVec2f(200,0));
+		break;
+	case 57359:
+		knight->move(ofVec2f(0, 200));
+		break;
+	case 'k':
+		knight->slash();
+		break;
 	default:
+		printf("key pressed: %d\n", key);
 		break;
 	}
 }
 
 //--------------------------------------------------------------
 void ofApp::keyReleased(int key){
-
+	switch (key)
+	{
+	case 57356:
+		knight->move(ofVec2f(0, 0));
+		break;
+	case 57357:
+		knight->move(ofVec2f(0, 0));
+		break;
+	case 57358:
+		knight->move(ofVec2f(0, 0));
+		break;
+	case 57359:
+		knight->move(ofVec2f(0, 0));
+		break;
+	default:
+		break;
+	}
 }
 
 //--------------------------------------------------------------

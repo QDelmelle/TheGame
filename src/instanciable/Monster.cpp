@@ -5,10 +5,9 @@ Monster::Monster(int a, int b, int s, DataManager* dm):Character(a, b, s, dm, "B
 //a = pos x, b = pos y, s = size, hp = health points
 {
 	loadData(dm);
-	deathAnimTicks = 200; //TODO : faire un calcule en fonction de la durée et du nombre de frames
+	deathAnimTicks = 200; //TODO : faire un calcul en fonction de la durée et du nombre de frames
 	health = 200;
 	punch = false;
-	///effectsDodged.push_back(3);
 }
 
 Monster::~Monster()
@@ -53,7 +52,6 @@ void Monster::loadData(DataManager *dm)
 void Monster::draw()
 {
 	if(!punch) Character::draw();
-	ofDrawBitmapStringHighlight(std::to_string(health), x + 30, y + 30);
 	if (punch) { 
 		static int i = 16;
 		if (i < 40) {

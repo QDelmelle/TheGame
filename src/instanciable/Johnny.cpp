@@ -4,11 +4,6 @@
 
 Johnny::Johnny(int a, int b, int s, DataManager* dm):Shooter(a, b, s, dm, "Johnny") //a = pos x, b = pos y, s = size, hp = health points
 {
-
-	bang.load("sound/Piou.mp3");
-	bang.setVolume(1);
-	bang.setMultiPlay(true);
-
 	health = 100;
 	roundsLeft = 0;
 	rps = 1;
@@ -26,6 +21,7 @@ void Johnny::loadData(DataManager* dm)
 {
 	texture = dm->textures[3];
 	shootingTexture = dm->textures[4];
+	bang = dm->sounds[2];
 }
 
 void Johnny::update()
@@ -53,7 +49,6 @@ void Johnny::shoot()
 void Johnny::draw()
 {
 	Shooter::draw();
-	ofDrawBitmapStringHighlight(std::to_string(health), x+30, y+30);
 }
 
 void Johnny::getHitBy(Projectile * p)

@@ -3,9 +3,7 @@
 
 Body::Body(int a, int b, int s, DataManager* dm):Shape(a, b, s, dm)
 {
-	ofLoadImage(texture, "image/inconnu.png");
 	status = Utils::ALIVE;
-
 	//	?
 	burnTime = 0;// ofGetElapsedTimef();
 	burnTicks = 0;
@@ -33,7 +31,6 @@ void Body::draw()
 	switch (status)
 	{
 	case Utils::DYING:
-		// on a 10 frames => en 2 secondes => 5/sec 
 		currentTexture = deathAnimation[(deathAnimation.size() - 1 - deathAnimTicks / 12)];
 		deathAnimTicks--;
 		break;
@@ -59,6 +56,8 @@ void Body::draw()
 		ofPoint(x - currentSize, y + currentSize));
 
 	menu.draw();
+
+	ofDrawBitmapStringHighlight(std::to_string(health), x + 30, y + 30);
 }
 
 void Body::update()
